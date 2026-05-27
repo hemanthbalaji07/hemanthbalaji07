@@ -106,7 +106,7 @@
       animation: steam 3s linear infinite;
     }
 
-    /* Speech Bubble Bobbing & Reveal */
+    /* Speech Bubble Bobbing and Reveal */
     @keyframes bubbleBob {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-4px); }
@@ -208,7 +208,7 @@
       <line x1="214" y1="128" x2="266" y2="128" stroke="#00f0ff" stroke-width="1.5" opacity="0.8" />
     </g>
 
-    <!-- Cat Nose & Whiskers -->
+    <!-- Cat Nose and Whiskers -->
     <path d="M 240,147 L 238,145 L 242,145 Z" fill="#ff007f" />
     <!-- Whiskers -->
     <line x1="205" y1="150" x2="190" y2="152" stroke="#1b233a" stroke-width="1" />
