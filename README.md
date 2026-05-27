@@ -2,39 +2,59 @@
 This README was custom-designed for Hemanth Balaji by Antigravity.
 To activate it on your profile:
 1. Create a public repository named exactly "hemanthbalaji07"
-2. Commit this README.md and the accompanying github_profile_banner.png to that repository.
+2. Commit this README.md and the accompanying github_profile_banner.svg to that repository.
 -->
 
 <p align="center">
-  <img src="github_profile_banner.png" alt="Hemanth Balaji AI Engineer Banner" width="100%">
+  <img src="github_profile_banner.svg" alt="Hemanth Balaji AI Engineer Banner" width="100%">
 </p>
 
 <h1 align="center">Hi there, I'm Hemanth Balaji! 👋</h1>
 
 <p align="center">
-  <b>Building toward becoming an AI Engineer • Passionate about Python, ML, LLMs, and AI Systems</b>
+  <b>1st-Year Tech Student & Aspiring AI Engineer • Proactively Building & Documenting the Future of AI</b>
 </p>
 
 <p align="center">
-  <a href="https://linkedin.com/in/your-linkedin-username" target="_blank">
+  <a href="https://www.linkedin.com/in/hemanth-balaji-r-m" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
   </a>
-  <a href="mailto:hemanthbalaji07@gmail.com" target="_blank">
+  <a href="mailto:hemanthbalaji08@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge"/>
   </a>
+  <img src="https://komarev.com/ghpvc/?username=hemanthbalaji07&color=a855f7&style=for-the-badge&label=Profile+Views" alt="Profile Views" />
 </p>
 
 ---
 
-### 🚀 About Me
+### 🚀 About Me & My Ambition
 
-I am a highly motivated aspiring **AI Engineer** dedicated to building, optimizing, and scaling intelligent systems. I believe in learning by doing, and I am documenting my progression, core concepts, and hands-on projects in my dedicated repository:
+I am a **1st-year computer science student** on a proactive mission to transition into **AI Engineering**. I believe the best way to learn is in public, which is why I am documenting my entire training curriculum, algorithms, and practical projects from day one.
 
-👉 **[ai-engineering-journey](https://github.com/hemanthbalaji07/ai-engineering-journey)** — My learning path covering mathematics, classical machine learning, deep learning, and advanced AI application systems.
+📂 **[ai-engineering-journey](https://github.com/hemanthbalaji07/ai-engineering-journey)** — My central repository documenting my learning path through mathematics, classical ML, and generative AI systems.
 
-- 🌱 **Currently Focused On**: Deep learning architectures, parameter-efficient fine-tuning (LoRA/QLoRA), Retrieval-Augmented Generation (RAG) paradigms, and deploying LLMs.
-- 💡 **Core Interests**: Neural Networks, LLM Fine-Tuning, Multi-Agent Systems, High-Performance AI Inference, and Vector Databases.
-- 🎯 **Long-Term Goal**: Engineering state-of-the-art AI systems that solve real-world problems at scale.
+* **🌱 Proactive Early Start**: Initiating specialized training in Machine Learning, neural networks, and Deep Learning in my first year to build a solid technical foundation early.
+* **💡 Passionate About**: Advanced Python development, fine-tuning Large Language Models, engineering Retrieval-Augmented Generation (RAG) pipelines, and building AI agents.
+* **🎯 My Goal**: Building highly performant, production-ready AI applications and contributing to the open-source intelligence ecosystem.
+
+---
+
+### 🗺️ My AI Engineering Roadmap (Recruiter Spotlight)
+
+Recruiters and collaborators can track my progress through my self-guided AI Engineering roadmap:
+
+* **Phase 1: Engineering Fundamentals** 🟩 *Completed*
+  * High-performance Python, Object-Oriented Programming, and linear algebra.
+  * Relational databases (SQL), Git/GitHub version control workflows, and Bash scripting.
+* **Phase 2: Machine Learning Foundations** 🟩 *Completed*
+  * Supervised and Unsupervised Learning models with Scikit-Learn.
+  * Exploratory Data Analysis (EDA) using NumPy, Pandas, and Matplotlib.
+* **Phase 3: Deep Learning & Neural Architectures** 🟨 *Current Focus*
+  * Custom neural network implementation using **PyTorch** and TensorFlow.
+  * Computer Vision and Natural Language Processing (NLP) foundations.
+* **Phase 4: Generative AI & Large Language Models** 🚀 *Upcoming Goal*
+  * Retrieval-Augmented Generation (RAG) paradigms with LangChain and LlamaIndex.
+  * Fine-tuning LLMs (LoRA/QLoRA) and deploying production inference systems.
 
 ---
 
@@ -43,13 +63,13 @@ I am a highly motivated aspiring **AI Engineer** dedicated to building, optimizi
 <table width="100%">
   <tr>
     <td width="50%" valign="top">
-      <h4>💻 Languages</h4>
+      <h4>💻 Programming Languages</h4>
       <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>&nbsp;
       <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white" alt="SQL"/>&nbsp;
       <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++"/>&nbsp;
       <img src="https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white" alt="Bash"/>
       <br/><br/>
-      <h4>🧠 Machine Learning & Deep Learning</h4>
+      <h4>🧠 Machine & Deep Learning</h4>
       <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch"/>&nbsp;
       <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow"/>&nbsp;
       <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/>&nbsp;
@@ -57,7 +77,7 @@ I am a highly motivated aspiring **AI Engineer** dedicated to building, optimizi
       <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas"/>
     </td>
     <td width="50%" valign="top">
-      <h4>🤖 Generative AI & LLM Tech</h4>
+      <h4>🤖 LLMs & Generative AI</h4>
       <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face"/>&nbsp;
       <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI"/>&nbsp;
       <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" alt="LangChain"/>&nbsp;
@@ -97,5 +117,5 @@ I am a highly motivated aspiring **AI Engineer** dedicated to building, optimizi
 
 <p align="center">
   <i>"The best way to predict the future is to invent it." — Alan Kay</i><br/>
-  <b>Thank you for visiting! Feel free to explore my repositories or connect. Let's build something intelligent.</b>
+  <b>Thank you for visiting! Feel free to explore my repositories or connect. Let's build something intelligent together!</b>
 </p>
