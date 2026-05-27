@@ -35,7 +35,7 @@
   </defs>
 
   <style>
-    /* CSS Styles & Keyframe Animations */
+    /* CSS Styles and Keyframe Animations */
     .bg {
       fill: url(#bgGrad);
     }
