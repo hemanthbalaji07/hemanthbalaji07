@@ -122,9 +122,8 @@ I believe in starting early and learning by doing. Right now, I am focused on bu
 
 <!-- QUOTE + FOOTER -->
 <p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Random Dev Quote"/>
+  <i>"The best way to predict the future is to invent it."</i> — <b>Alan Kay</b>
 </p>
-
 <br/>
 
 <p align="center">
