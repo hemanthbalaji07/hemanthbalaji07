@@ -2,9 +2,9 @@
   <defs>
     <!-- Background Gradient (Deep Space Cyberpunk) -->
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#05030f" />
-      <stop offset="50%" stop-color="#0a071c" />
-      <stop offset="100%" stop-color="#110c2e" />
+      <stop offset="0%" stop-color="#04020c" />
+      <stop offset="50%" stop-color="#080518" />
+      <stop offset="100%" stop-color="#0e0a26" />
     </linearGradient>
 
     <!-- Glowing Text Gradient -->
@@ -14,11 +14,11 @@
       <stop offset="100%" stop-color="#a855f7" />
     </linearGradient>
 
-    <!-- Tech Line Gradient (Purple to Cyan) -->
-    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.2" />
-      <stop offset="50%" stop-color="#00f2fe" stop-opacity="1" />
-      <stop offset="100%" stop-color="#d946ef" stop-opacity="0.2" />
+    <!-- Console Borders & Details -->
+    <linearGradient id="consoleBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#201b47" />
+      <stop offset="50%" stop-color="#00f2fe" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#d946ef" stop-opacity="0.8" />
     </linearGradient>
 
     <!-- Running Neon Border Gradient -->
@@ -30,28 +30,24 @@
 
     <!-- Nebulae Gradients -->
     <radialGradient id="nebPurple" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.18" />
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.15" />
       <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="nebCyan" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.15" />
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.12" />
       <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="nebPink" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#d946ef" stop-opacity="0.12" />
-      <stop offset="100%" stop-color="#d946ef" stop-opacity="0" />
     </radialGradient>
 
     <!-- Filters for Neon Glow -->
     <filter id="neonGlowCyan" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feGaussianBlur stdDeviation="4" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
     <filter id="neonGlowPurple" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feGaussianBlur stdDeviation="5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -59,65 +55,61 @@
     </filter>
 
     <style>
-      @keyframes rotateCW {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+      /* Glowing / Pulsing nodes */
+      @keyframes pulseNode {
+        0%, 100% { transform: scale(1); opacity: 0.4; }
+        50% { transform: scale(1.15); opacity: 1; }
       }
-      @keyframes rotateCCW {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(-360deg); }
+      .node-pulse-1 { animation: pulseNode 3s ease-in-out infinite; }
+      .node-pulse-2 { animation: pulseNode 4s ease-in-out infinite; animation-delay: 1s; }
+      .node-pulse-3 { animation: pulseNode 2.5s ease-in-out infinite; animation-delay: 0.5s; }
+
+      /* Flowing data lines (Forward Pass vs Backpropagation) */
+      @keyframes forwardFlow {
+        to { stroke-dashoffset: -80; }
       }
-      .ring-cw {
-        transform-origin: 280px 200px;
-        animation: rotateCW 18s linear infinite;
+      @keyframes backwardFlow {
+        to { stroke-dashoffset: 80; }
       }
-      .ring-cw-fast {
-        transform-origin: 280px 200px;
-        animation: rotateCW 12s linear infinite;
+      .flow-fwd {
+        stroke-dasharray: 8 24;
+        animation: forwardFlow 2.5s linear infinite;
       }
-      .ring-ccw {
-        transform-origin: 280px 200px;
-        animation: rotateCCW 15s linear infinite;
+      .flow-fwd-fast {
+        stroke-dasharray: 10 30;
+        animation: forwardFlow 1.5s linear infinite;
+      }
+      .flow-bck {
+        stroke-dasharray: 8 24;
+        animation: backwardFlow 2.5s linear infinite;
+      }
+      .flow-bck-fast {
+        stroke-dasharray: 10 30;
+        animation: backwardFlow 1.5s linear infinite;
       }
 
-      @keyframes pulse {
-        0%, 100% { opacity: 0.3; }
-        50% { opacity: 1; }
+      /* Chart Lines Drawing Animation */
+      @keyframes drawChart {
+        0% { stroke-dashoffset: 400; }
+        45%, 55% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -400; }
       }
-      .pulse-glow-1 { animation: pulse 3s ease-in-out infinite; }
-      .pulse-glow-2 { animation: pulse 4s ease-in-out infinite; animation-delay: 1s; }
-      .pulse-glow-3 { animation: pulse 2.5s ease-in-out infinite; animation-delay: 0.5s; }
-
-      @keyframes flowData {
-        to { stroke-dashoffset: -160; }
+      .chart-line-loss {
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        animation: drawChart 10s ease-in-out infinite;
       }
-      .flow-line-1 {
-        stroke-dasharray: 20 60;
-        animation: flowData 4s linear infinite;
-      }
-      .flow-line-2 {
-        stroke-dasharray: 15 45;
-        animation: flowData 3s linear infinite;
-      }
-      .flow-line-fast {
-        stroke-dasharray: 25 75;
-        animation: flowData 2s linear infinite;
+      .chart-line-acc {
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        animation: drawChart 10s ease-in-out infinite;
+        animation-delay: 0.2s;
       }
 
-      @keyframes matrixRain {
-        0% { transform: translateY(-300px); }
-        100% { transform: translateY(450px); }
-      }
-      .rain-col {
-        animation: matrixRain 8s linear infinite;
-      }
-      .r-fast { animation-duration: 5s; }
-      .r-mid { animation-duration: 7s; }
-      .r-slow { animation-duration: 10s; }
-
+      /* Decrypt and Reveal */
       .decText {
         font-family: 'Consolas', 'Courier New', monospace;
-        font-size: 52px;
+        font-size: 46px;
         font-weight: 900;
         fill: #00f2fe;
         text-anchor: middle;
@@ -149,6 +141,7 @@
         100% { opacity: 1; }
       }
 
+      /* Glitch details */
       @keyframes glitchL {
         0%, 94%, 100% { transform: translate(0, 0); }
         95% { transform: translate(-3px, 1px); }
@@ -165,38 +158,23 @@
       }
       .glitch-r {
         animation: glitchL 4s infinite;
-        transform-origin: 820px 180px;
+        transform-origin: 815px 80px;
       }
       .glitch-b {
         animation: glitchR 4s infinite;
-        transform-origin: 820px 180px;
+        transform-origin: 815px 80px;
       }
 
+      /* Details fade-in */
       .subText {
         opacity: 0;
         animation: revealSub 0.5s ease-out 4.2s forwards;
       }
-      .subLine {
-        transform: scaleX(0);
-        transform-origin: center;
-        animation: expandLine 1s ease-out 4.5s forwards;
-      }
       @keyframes revealSub {
         to { opacity: 1; }
       }
-      @keyframes expandLine {
-        to { transform: scaleX(1); }
-      }
 
-      .badge-group {
-        opacity: 0;
-        animation: revealSub 0.5s ease-out forwards;
-      }
-      .bg-1 { animation-delay: 4.8s; }
-      .bg-2 { animation-delay: 5.0s; }
-      .bg-3 { animation-delay: 5.2s; }
-      .bg-4 { animation-delay: 5.4s; }
-
+      /* Neon border running */
       .running-border {
         stroke-dasharray: 120 400;
         animation: runBorder 12s linear infinite;
@@ -212,203 +190,192 @@
 
   <!-- Nebulae (Cosmic Glows) -->
   <circle cx="280" cy="200" r="300" fill="url(#nebPurple)" />
-  <circle cx="820" cy="200" r="280" fill="url(#nebCyan)" />
-  <circle cx="600" cy="350" r="250" fill="url(#nebPink)" />
+  <circle cx="815" cy="200" r="280" fill="url(#nebCyan)" />
 
-  <!-- Background Cyber Grid (Perspective Lines) -->
-  <g opacity="0.08" stroke="#00f2fe" stroke-width="1">
-    <line x1="600" y1="120" x2="-200" y2="400" />
-    <line x1="600" y1="120" x2="0" y2="400" />
-    <line x1="600" y1="120" x2="200" y2="400" />
-    <line x1="600" y1="120" x2="400" y2="400" />
-    <line x1="600" y1="120" x2="600" y2="400" />
-    <line x1="600" y1="120" x2="800" y2="400" />
-    <line x1="600" y1="120" x2="1000" y2="400" />
-    <line x1="600" y1="120" x2="1200" y2="400" />
-    <line x1="600" y1="120" x2="1400" y2="400" />
-  </g>
-
-  <!-- Horizontals for perspective (Fading in grid) -->
-  <g opacity="0.08" stroke="#00f2fe" stroke-width="1">
+  <!-- Background Grid lines (HUD grid) -->
+  <g opacity="0.05" stroke="#00f2fe" stroke-width="1">
+    <line x1="0" y1="50" x2="1200" y2="50" />
+    <line x1="0" y1="100" x2="1200" y2="100" />
     <line x1="0" y1="150" x2="1200" y2="150" />
-    <line x1="0" y1="190" x2="1200" y2="190" />
-    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="200" x2="1200" y2="200" />
+    <line x1="0" y1="250" x2="1200" y2="250" />
     <line x1="0" y1="300" x2="1200" y2="300" />
-    <line x1="0" y1="370" x2="1200" y2="370" />
+    <line x1="0" y1="350" x2="1200" y2="350" />
+    <line x1="150" y1="0" x2="150" y2="400" />
+    <line x1="300" y1="0" x2="300" y2="400" />
+    <line x1="450" y1="0" x2="450" y2="400" />
+    <line x1="600" y1="0" x2="600" y2="400" />
+    <line x1="750" y1="0" x2="750" y2="400" />
+    <line x1="900" y1="0" x2="900" y2="400" />
+    <line x1="1050" y1="0" x2="1050" y2="400" />
   </g>
 
-  <!-- Cyber Rain / Falling Binary (Left Side) -->
-  <text x="30" y="0" font-family="'Consolas', monospace" font-size="11" fill="#00f2fe" opacity="0.2" class="rain-col r-fast">
-    <tspan x="30" dy="0">1</tspan>
-    <tspan x="30" dy="16">0</tspan>
-    <tspan x="30" dy="16">λ</tspan>
-    <tspan x="30" dy="16">1</tspan>
-    <tspan x="30" dy="16">0</tspan>
-    <tspan x="30" dy="16">A</tspan>
-    <tspan x="30" dy="16">I</tspan>
-    <tspan x="30" dy="16">0</tspan>
-    <tspan x="30" dy="16">1</tspan>
-  </text>
-  <text x="65" y="0" font-family="'Consolas', monospace" font-size="11" fill="#a855f7" opacity="0.15" class="rain-col r-slow">
-    <tspan x="65" dy="0">0</tspan>
-    <tspan x="65" dy="16">1</tspan>
-    <tspan x="65" dy="16">1</tspan>
-    <tspan x="65" dy="16">Y</tspan>
-    <tspan x="65" dy="16">0</tspan>
-    <tspan x="65" dy="16">1</tspan>
-    <tspan x="65" dy="16">X</tspan>
-    <tspan x="65" dy="16">0</tspan>
-  </text>
-
-  <!-- Cyber Rain / Falling Binary (Right Side) -->
-  <text x="1100" y="0" font-family="'Consolas', monospace" font-size="11" fill="#d946ef" opacity="0.18" class="rain-col r-mid">
-    <tspan x="1100" dy="0">f</tspan>
-    <tspan x="1100" dy="16">(</tspan>
-    <tspan x="1100" dy="16">x</tspan>
-    <tspan x="1100" dy="16">)</tspan>
-    <tspan x="1100" dy="16">1</tspan>
-    <tspan x="1100" dy="16">0</tspan>
-    <tspan x="1100" dy="16">w</tspan>
-    <tspan x="1100" dy="16">b</tspan>
-  </text>
-  <text x="1145" y="0" font-family="'Consolas', monospace" font-size="11" fill="#00f2fe" opacity="0.22" class="rain-col r-fast">
-    <tspan x="1145" dy="0">1</tspan>
-    <tspan x="1145" dy="16">1</tspan>
-    <tspan x="1145" dy="16">0</tspan>
-    <tspan x="1145" dy="16">0</tspan>
-    <tspan x="1145" dy="16">1</tspan>
-    <tspan x="1145" dy="16">0</tspan>
-    <tspan x="1145" dy="16">1</tspan>
-    <tspan x="1145" dy="16">1</tspan>
-  </text>
-  <text x="1175" y="0" font-family="'Consolas', monospace" font-size="11" fill="#a855f7" opacity="0.15" class="rain-col r-slow">
-    <tspan x="1175" dy="0">0</tspan>
-    <tspan x="1175" dy="16">1</tspan>
-    <tspan x="1175" dy="16">0</tspan>
-    <tspan x="1175" dy="16">Z</tspan>
-    <tspan x="1175" dy="16">1</tspan>
-    <tspan x="1175" dy="16">0</tspan>
-    <tspan x="1175" dy="16">0</tspan>
-  </text>
-
-  <!-- ==================== NEURAL NETWORK WEB ==================== -->
-  <!-- Base connection paths (low opacity) -->
-  <g stroke-width="1" opacity="0.2">
-    <!-- Links to core (280, 200) -->
-    <path d="M 280 200 Q 170 130 100 100" fill="none" stroke="#a855f7" />
-    <path d="M 280 200 Q 180 270 120 300" fill="none" stroke="#00f2fe" />
-    <path d="M 280 200 Q 400 130 480 90" fill="none" stroke="#d946ef" />
-    <path d="M 280 200 Q 380 280 450 310" fill="none" stroke="#00f2fe" />
-    <path d="M 280 200 L 280 50" fill="none" stroke="#a855f7" />
-    <path d="M 280 200 L 280 350" fill="none" stroke="#d946ef" />
-
-    <!-- Cross connections -->
-    <path d="M 100 100 Q 180 60 280 50" fill="none" stroke="#00f2fe" />
-    <path d="M 280 50 Q 380 60 480 90" fill="none" stroke="#a855f7" />
-    <path d="M 120 300 Q 180 340 280 350" fill="none" stroke="#d946ef" />
-    <path d="M 280 350 Q 380 340 450 310" fill="none" stroke="#00f2fe" />
-    <line x1="100" y1="100" x2="120" y2="300" stroke="#a855f7" />
-    <line x1="480" y1="90" x2="450" y2="310" stroke="#d946ef" />
+  <!-- ==================== NEURAL NETWORK LAYER VISUALIZER ==================== -->
+  <!-- Base connection lines (low opacity) -->
+  <g stroke="#ffffff" stroke-width="0.8" opacity="0.06">
+    <!-- Input to Hidden 1 -->
+    <line x1="130" y1="130" x2="240" y2="100" /><line x1="130" y1="130" x2="240" y2="166" /><line x1="130" y1="130" x2="240" y2="233" /><line x1="130" y1="130" x2="240" y2="300" />
+    <line x1="130" y1="200" x2="240" y2="100" /><line x1="130" y1="200" x2="240" y2="166" /><line x1="130" y1="200" x2="240" y2="233" /><line x1="130" y1="200" x2="240" y2="300" />
+    <line x1="130" y1="270" x2="240" y2="100" /><line x1="130" y1="270" x2="240" y2="166" /><line x1="130" y1="270" x2="240" y2="233" /><line x1="130" y1="270" x2="240" y2="300" />
+    <!-- Hidden 1 to Hidden 2 -->
+    <line x1="240" y1="100" x2="350" y2="100" /><line x1="240" y1="100" x2="350" y2="166" /><line x1="240" y1="100" x2="350" y2="233" /><line x1="240" y1="100" x2="350" y2="300" />
+    <line x1="240" y1="166" x2="350" y2="100" /><line x1="240" y1="166" x2="350" y2="166" /><line x1="240" y1="166" x2="350" y2="233" /><line x1="240" y1="166" x2="350" y2="300" />
+    <line x1="240" y1="233" x2="350" y2="100" /><line x1="240" y1="233" x2="350" y2="166" /><line x1="240" y1="233" x2="350" y2="233" /><line x1="240" y1="233" x2="350" y2="300" />
+    <line x1="240" y1="300" x2="350" y2="100" /><line x1="240" y1="300" x2="350" y2="166" /><line x1="240" y1="300" x2="350" y2="233" /><line x1="240" y1="300" x2="350" y2="300" />
+    <!-- Hidden 2 to Output -->
+    <line x1="350" y1="100" x2="460" y2="160" /><line x1="350" y1="100" x2="460" y2="240" />
+    <line x1="350" y1="166" x2="460" y2="160" /><line x1="350" y1="166" x2="460" y2="240" />
+    <line x1="350" y1="233" x2="460" y2="160" /><line x1="350" y1="233" x2="460" y2="240" />
+    <line x1="350" y1="300" x2="460" y2="160" /><line x1="350" y1="300" x2="460" y2="240" />
   </g>
 
-  <!-- Pulsing/Flowing data paths -->
-  <g stroke-width="1.8" fill="none" opacity="0.8">
-    <path d="M 280 200 Q 170 130 100 100" stroke="#00f2fe" class="flow-line-1" />
-    <path d="M 280 200 Q 180 270 120 300" stroke="#d946ef" class="flow-line-2" />
-    <path d="M 280 200 Q 400 130 480 90" stroke="#00f2fe" class="flow-line-fast" />
-    <path d="M 280 200 Q 380 280 450 310" stroke="#a855f7" class="flow-line-1" />
-    <path d="M 280 200 L 280 50" stroke="#d946ef" class="flow-line-2" />
-    <path d="M 280 200 L 280 350" stroke="#00f2fe" class="flow-line-fast" />
+  <!-- Highlighted Data Pathways (Forward Pass: Cyan | Backpropagation: Magenta) -->
+  <g stroke-width="1.5" fill="none">
+    <!-- Forward active paths (cyan pulses) -->
+    <line x1="130" y1="130" x2="240" y2="166" stroke="#00f2fe" class="flow-fwd" opacity="0.7" />
+    <line x1="130" y1="200" x2="240" y2="233" stroke="#00f2fe" class="flow-fwd-fast" opacity="0.8" />
+    <line x1="240" y1="166" x2="350" y2="100" stroke="#00f2fe" class="flow-fwd-fast" opacity="0.8" />
+    <line x1="240" y1="233" x2="350" y2="300" stroke="#00f2fe" class="flow-fwd" opacity="0.7" />
+    <line x1="350" y1="100" x2="460" y2="160" stroke="#00f2fe" class="flow-fwd-fast" opacity="0.8" />
 
-    <path d="M 100 100 Q 180 60 280 50" stroke="#a855f7" class="flow-line-1" />
-    <path d="M 280 50 Q 380 60 480 90" stroke="#d946ef" class="flow-line-2" />
-    <path d="M 120 300 Q 180 340 280 350" stroke="#00f2fe" class="flow-line-fast" />
+    <!-- Backprop active paths (magenta pulses flowing backward) -->
+    <line x1="460" y1="240" x2="350" y2="233" stroke="#d946ef" class="flow-bck-fast" opacity="0.85" />
+    <line x1="350" y1="233" x2="240" y2="300" stroke="#d946ef" class="flow-bck" opacity="0.75" />
+    <line x1="240" y1="300" x2="130" y2="270" stroke="#d946ef" class="flow-bck-fast" opacity="0.85" />
+    <line x1="350" y1="166" x2="240" y2="100" stroke="#d946ef" class="flow-bck" opacity="0.7" />
+    <line x1="240" y1="100" x2="130" y2="130" stroke="#d946ef" class="flow-bck-fast" opacity="0.8" />
   </g>
 
-  <!-- Neural Nodes (Outer Points) -->
-  <circle cx="100" cy="100" r="7" fill="#00f2fe" filter="url(#neonGlowCyan)" class="pulse-glow-1" />
-  <circle cx="120" cy="300" r="9" fill="#d946ef" filter="url(#neonGlowPurple)" class="pulse-glow-2" />
-  <circle cx="480" cy="90" r="8" fill="#a855f7" filter="url(#neonGlowPurple)" class="pulse-glow-3" />
-  <circle cx="450" cy="310" r="10" fill="#00f2fe" filter="url(#neonGlowCyan)" class="pulse-glow-1" />
-  <circle cx="280" cy="50" r="6" fill="#a855f7" filter="url(#neonGlowPurple)" class="pulse-glow-2" />
-  <circle cx="280" cy="350" r="8" fill="#d946ef" filter="url(#neonGlowPurple)" class="pulse-glow-3" />
-
-  <!-- ==================== CENTRAL AI CORE ==================== -->
-  <!-- Outer technological spinning ring -->
-  <g class="ring-cw">
-    <circle cx="280" cy="200" r="120" fill="none" stroke="#a855f7" stroke-width="1" stroke-dasharray="120 20 40 20" opacity="0.3" />
-    <circle cx="280" cy="200" r="115" fill="none" stroke="#a855f7" stroke-width="0.5" stroke-dasharray="5 10" opacity="0.2" />
+  <!-- Network Nodes with pulsing glows -->
+  <!-- Input Layer (Cyan) -->
+  <g fill="#00f2fe" filter="url(#neonGlowCyan)">
+    <circle cx="130" cy="130" r="6" class="node-pulse-1" />
+    <circle cx="130" cy="200" r="6" class="node-pulse-2" />
+    <circle cx="130" cy="270" r="6" class="node-pulse-3" />
+  </g>
+  <!-- Hidden Layer 1 (Purple/Blue) -->
+  <g fill="#a855f7" filter="url(#neonGlowPurple)">
+    <circle cx="240" cy="100" r="5" class="node-pulse-2" />
+    <circle cx="240" cy="166" r="5" class="node-pulse-3" />
+    <circle cx="240" cy="233" r="5" class="node-pulse-1" />
+    <circle cx="240" cy="300" r="5" class="node-pulse-2" />
+  </g>
+  <!-- Hidden Layer 2 (Magenta/Pink) -->
+  <g fill="#d946ef" filter="url(#neonGlowPurple)">
+    <circle cx="350" cy="100" r="5" class="node-pulse-3" />
+    <circle cx="350" cy="166" r="5" class="node-pulse-1" />
+    <circle cx="350" cy="233" r="5" class="node-pulse-2" />
+    <circle cx="350" cy="300" r="5" class="node-pulse-3" />
+  </g>
+  <!-- Output Layer (Cyan) -->
+  <g fill="#00f2fe" filter="url(#neonGlowCyan)">
+    <circle cx="460" cy="160" r="7" class="node-pulse-1" />
+    <circle cx="460" cy="240" r="7" class="node-pulse-2" />
   </g>
 
-  <!-- Middle tech spinning ring -->
-  <g class="ring-ccw">
-    <circle cx="280" cy="200" r="90" fill="none" stroke="#d946ef" stroke-width="2.5" stroke-dasharray="60 15 20 15" opacity="0.5" filter="url(#neonGlowPurple)" />
-    <!-- Technological ticks -->
-    <path d="M 280 100 L 280 106 M 280 300 L 280 294 M 180 200 L 186 200 M 380 200 L 374 200" stroke="#d946ef" stroke-width="2" opacity="0.6" />
+  <!-- Decorative labels for Network Layers -->
+  <g font-family="monospace" font-size="9" fill="#475569" letter-spacing="1">
+    <text x="130" y="325" text-anchor="middle">INPUT</text>
+    <text x="295" y="325" text-anchor="middle">HIDDEN</text>
+    <text x="460" y="325" text-anchor="middle">OUTPUT</text>
   </g>
 
-  <!-- Inner tech spinning ring -->
-  <g class="ring-cw-fast">
-    <circle cx="280" cy="200" r="60" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="15 35" opacity="0.7" filter="url(#neonGlowCyan)" />
-    <!-- Reactor Core lines -->
-    <line x1="260" y1="200" x2="300" y2="200" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
-    <line x1="280" y1="180" x2="280" y2="220" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
-    <line x1="266" y1="186" x2="294" y2="214" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
-    <line x1="266" y1="214" x2="294" y2="186" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
-  </g>
 
-  <!-- Central Core Orb (Glowing AI Core) -->
-  <circle cx="280" cy="200" r="28" fill="#110c2e" stroke="#00f2fe" stroke-width="2" filter="url(#neonGlowCyan)" />
-  <circle cx="280" cy="200" r="16" fill="#ffffff" filter="url(#neonGlowCyan)" class="pulse-glow-1" />
-
-  <!-- ==================== HACKER DECRYPT NAME SECTION ==================== -->
+  <!-- ==================== HEMANTH BALAJI HEADER ==================== -->
   <!-- Decrypt Phase -->
   <g class="decWrapper">
-    <text x="820" y="180" class="decText d1">0x7F8E4D2B5A</text>
-    <text x="820" y="180" class="decText d2">H_M4NTH_B@L</text>
-    <text x="820" y="180" class="decText d3">HEM@NTH B@L@JI</text>
-    <text x="820" y="180" class="decText d4">HEMANTH BAL</text>
-    <text x="820" y="180" class="decText d5">HEMANTH BALAJI</text>
+    <text x="815" y="80" class="decText d1">0x7F8E4D2B5A</text>
+    <text x="815" y="80" class="decText d2">H_M4NTH_B@L</text>
+    <text x="815" y="80" class="decText d3">HEM@NTH B@L@JI</text>
+    <text x="815" y="80" class="decText d4">HEMANTH BAL</text>
+    <text x="815" y="80" class="decText d5">HEMANTH BALAJI</text>
   </g>
 
   <!-- Decrypted Final State -->
   <g class="finalText">
     <!-- Glitch shadows -->
-    <text x="820" y="180" font-family="'Consolas', 'Courier New', monospace" font-size="52" font-weight="900" fill="#ff0055" text-anchor="middle" opacity="0.4" class="glitch-r">HEMANTH BALAJI</text>
-    <text x="820" y="180" font-family="'Consolas', 'Courier New', monospace" font-size="52" font-weight="900" fill="#00ffff" text-anchor="middle" opacity="0.4" class="glitch-b">HEMANTH BALAJI</text>
+    <text x="815" y="80" font-family="'Consolas', 'Courier New', monospace" font-size="46" font-weight="900" fill="#ff0055" text-anchor="middle" opacity="0.4" class="glitch-r">HEMANTH BALAJI</text>
+    <text x="815" y="80" font-family="'Consolas', 'Courier New', monospace" font-size="46" font-weight="900" fill="#00ffff" text-anchor="middle" opacity="0.4" class="glitch-b">HEMANTH BALAJI</text>
     <!-- Glowing Base text -->
-    <text x="820" y="180" font-family="'Consolas', 'Courier New', monospace" font-size="52" font-weight="900" fill="url(#titleGradient)" text-anchor="middle" filter="url(#neonGlowCyan)">HEMANTH BALAJI</text>
+    <text x="815" y="80" font-family="'Consolas', 'Courier New', monospace" font-size="46" font-weight="900" fill="url(#titleGradient)" text-anchor="middle" filter="url(#neonGlowCyan)">HEMANTH BALAJI</text>
   </g>
 
-  <!-- Subtitle and horizontal rules -->
+  <!-- Subtitle -->
   <g class="subText">
-    <text x="820" y="222" font-family="'Consolas', 'Courier New', monospace" font-size="16" font-weight="700" fill="#a855f7" text-anchor="middle" letter-spacing="4">AI ENGINEER IN TRAINING</text>
-    <line x1="650" y1="240" x2="990" y2="240" stroke="url(#lineGradient)" stroke-width="1.5" class="subLine" />
+    <text x="815" y="115" font-family="'Consolas', 'Courier New', monospace" font-size="14" font-weight="700" fill="#a855f7" text-anchor="middle" letter-spacing="3">AI ENGINEER IN TRAINING</text>
   </g>
 
-  <!-- Futuristic Loading Stack Badges -->
-  <!-- Python -->
-  <g class="badge-group bg-1">
-    <rect x="650" y="262" width="76" height="24" rx="6" fill="#0c0721" stroke="#00f2fe" stroke-width="1" />
-    <text x="688" y="278" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#00f2fe" text-anchor="middle">PYTHON</text>
+
+  <!-- ==================== MODEL TRAINING CONSOLE MONITOR ==================== -->
+  <!-- Console Frame -->
+  <rect x="630" y="145" width="370" height="190" rx="10" fill="#060410" stroke="url(#consoleBorder)" stroke-width="1.5" />
+
+  <!-- Console Header -->
+  <g font-family="monospace" font-weight="bold">
+    <rect x="630" y="145" width="370" height="30" rx="10" fill="#0b081e" />
+    <!-- Round window dots -->
+    <circle cx="650" cy="160" r="4.5" fill="#ef4444" />
+    <circle cx="664" cy="160" r="4.5" fill="#f59e0b" />
+    <circle cx="678" cy="160" r="4.5" fill="#10b981" />
+    
+    <text x="700" y="165" font-size="10" fill="#00f2fe" letter-spacing="1">TRAINING_MONITOR [RUNNING]</text>
+    <text x="980" y="165" font-size="10" fill="#475569" text-anchor="end">ADAM_LR_1E-3</text>
   </g>
-  <!-- PyTorch -->
-  <g class="badge-group bg-2">
-    <rect x="738" y="262" width="76" height="24" rx="6" fill="#0c0721" stroke="#d946ef" stroke-width="1" />
-    <text x="776" y="278" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#d946ef" text-anchor="middle">PYTORCH</text>
+
+  <!-- Console Grid Lines -->
+  <g opacity="0.06" stroke="#00f2fe" stroke-width="0.8">
+    <line x1="630" y1="210" x2="1000" y2="210" />
+    <line x1="630" y1="245" x2="1000" y2="245" />
+    <line x1="630" y1="280" x2="1000" y2="280" />
+    <line x1="700" y1="175" x2="700" y2="305" />
+    <line x1="770" y1="175" x2="770" y2="305" />
+    <line x1="840" y1="175" x2="840" y2="305" />
+    <line x1="910" y1="175" x2="910" y2="305" />
   </g>
-  <!-- LLMs -->
-  <g class="badge-group bg-3">
-    <rect x="826" y="262" width="76" height="24" rx="6" fill="#0c0721" stroke="#a855f7" stroke-width="1" />
-    <text x="864" y="278" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#a855f7" text-anchor="middle">GEN AI</text>
+
+  <!-- LOSS CURVE (Purple/Pink - Sloping Downward) -->
+  <path d="M 645 200 C 720 205, 780 290, 985 295" fill="none" stroke="#d946ef" stroke-width="2.5" class="chart-line-loss" filter="url(#neonGlowPurple)" />
+
+  <!-- ACCURACY CURVE (Cyan - Curving Upward) -->
+  <path d="M 645 295 C 720 290, 780 205, 985 200" fill="none" stroke="#00f2fe" stroke-width="2.5" class="chart-line-acc" filter="url(#neonGlowCyan)" />
+
+  <!-- Training Console Metrics Footer -->
+  <g font-family="monospace" font-size="10" font-weight="bold">
+    <text x="645" y="322" fill="#94a3b8">EPOCH: <tspan fill="#ffffff">248/300</tspan></text>
+    <text x="765" y="322" fill="#d946ef">LOSS: <tspan fill="#ffffff">0.034</tspan></text>
+    <text x="875" y="322" fill="#00f2fe">ACCURACY: <tspan fill="#ffffff">98.2%</tspan></text>
   </g>
-  <!-- Git -->
-  <g class="badge-group bg-4">
-    <rect x="914" y="262" width="76" height="24" rx="6" fill="#0c0721" stroke="#00f2fe" stroke-width="1" />
-    <text x="952" y="278" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#00f2fe" text-anchor="middle">GIT</text>
+
+  <!-- Floating Mathematical training expression (Gradient Descent Weight Update) -->
+  <text x="650" y="285" font-family="'Consolas', 'Courier New', monospace" font-size="9" fill="#a855f7" opacity="0.3" letter-spacing="1">w_t+1 = w_t - n * dL/dw</text>
+
+
+  <!-- ==================== TECH STACK LOADING BADGES ==================== -->
+  <g class="subText">
+    <!-- Python -->
+    <g class="badge-group bg-1">
+      <rect x="645" y="350" width="76" height="24" rx="6" fill="#0c0721" stroke="#00f2fe" stroke-width="1" />
+      <text x="683" y="366" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#00f2fe" text-anchor="middle">PYTHON</text>
+    </g>
+    <!-- PyTorch -->
+    <g class="badge-group bg-2">
+      <rect x="733" y="350" width="76" height="24" rx="6" fill="#0c0721" stroke="#d946ef" stroke-width="1" />
+      <text x="771" y="366" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#d946ef" text-anchor="middle">PYTORCH</text>
+    </g>
+    <!-- LLMs -->
+    <g class="badge-group bg-3">
+      <rect x="821" y="350" width="76" height="24" rx="6" fill="#0c0721" stroke="#a855f7" stroke-width="1" />
+      <text x="859" y="366" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#a855f7" text-anchor="middle">GEN AI</text>
+    </g>
+    <!-- Git -->
+    <g class="badge-group bg-4">
+      <rect x="909" y="350" width="76" height="24" rx="6" fill="#0c0721" stroke="#00f2fe" stroke-width="1" />
+      <text x="947" y="366" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#00f2fe" text-anchor="middle">GIT</text>
+    </g>
   </g>
+
 
   <!-- ==================== PREMIUM NEON RUNNING BORDER ==================== -->
-  <rect x="10" y="10" width="1180" height="380" rx="16" fill="none" stroke="#1c163f" stroke-width="1" />
+  <rect x="10" y="10" width="1180" height="380" rx="16" fill="none" stroke="#100b2e" stroke-width="1" />
   <rect x="10" y="10" width="1180" height="380" rx="16" fill="none" stroke="url(#borderGradient)" stroke-width="2" class="running-border" filter="url(#neonGlowCyan)" />
 </svg>
