@@ -1,48 +1,53 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 280" width="350" height="280">
   <defs>
-    <!-- Background Gradient -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0d1117" />
-      <stop offset="100%" stop-color="#070a0e" />
+    <!-- Premium Dark Glassmorphic Gradients -->
+    <linearGradient id="glass-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1420" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#05070f" stop-opacity="0.95" />
     </linearGradient>
     
-    <!-- Accent Gradients -->
-    <linearGradient id="accent-purple" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#a855f7" />
+    <linearGradient id="neon-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="50%" stop-color="#a855f7" />
       <stop offset="100%" stop-color="#ec4899" />
     </linearGradient>
-    <linearGradient id="accent-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f0ff" />
-      <stop offset="100%" stop-color="#3b82f6" />
-    </linearGradient>
+
+    <!-- Orb Gradients -->
+    <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="1" />
+      <stop offset="30%" stop-color="#00f0ff" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
+    </radialGradient>
   </defs>
 
   <style>
-    /* Window styling */
-    .window-bg {
-      fill: url(#bg-grad);
-      stroke: #30363d;
+    /* Main Window */
+    .window {
+      fill: url(#glass-grad);
+      stroke: url(#neon-glow);
       stroke-width: 1.5;
-      rx: 10px;
-    }
-    .title-bar {
-      fill: #161b22;
-      rx: 10px;
+      rx: 16px;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.5));
     }
     
-    /* Code styling */
-    .code-text {
-      font-family: 'Fira Code', 'Segoe UI Monospace', monospace;
-      font-size: 11px;
-      font-weight: 500;
+    .window-header {
+      fill: #090c15;
+      rx: 16px;
     }
-    .keyword { fill: #ff7b72; font-weight: bold; }
-    .function { fill: #d2a8ff; }
-    .string { fill: #a5d6ff; }
-    .comment { fill: #8b949e; font-style: italic; }
-    .variable { fill: #c9d1d9; }
-    .accent { fill: #ff7b72; }
+
+    /* Console Fonts */
+    .terminal-text {
+      font-family: 'Fira Code', 'Segoe UI Mono', monospace;
+      font-size: 10px;
+      fill: #e2e8f0;
+    }
     
+    .system { fill: #00f0ff; font-weight: bold; }
+    .success { fill: #10b981; }
+    .accent { fill: #a855f7; }
+    .muted { fill: #4b5563; }
+    .highlight { fill: #f43f5e; font-weight: bold; }
+
     /* Animations */
     @keyframes blink {
       0%, 100% { opacity: 1; }
@@ -52,165 +57,184 @@
       animation: blink 1s infinite;
       fill: #00f0ff;
     }
-    
-    @keyframes typeLine {
-      from { width: 0; }
-      to { width: 100%; }
+
+    /* Hologram Rotation (3D simulation) */
+    @keyframes rotateCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes rotateCCW {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+    .orbit-1 {
+      animation: rotateCW 12s linear infinite;
+      transform-origin: 270px 145px;
+    }
+    .orbit-2 {
+      animation: rotateCCW 8s linear infinite;
+      transform-origin: 270px 145px;
     }
     
-    /* AI Core pulsing */
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6)); }
+    /* Breathing / Pulsing Core */
+    @keyframes pulseCore {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.15); opacity: 0.95; }
     }
-    .ai-node {
-      animation: pulse 3s infinite ease-in-out;
-      transform-origin: 275px 150px;
+    .core {
+      animation: pulseCore 3s infinite ease-in-out;
+      transform-origin: 270px 145px;
     }
-    
-    /* Connection lines pulsing */
-    @keyframes dash {
-      to {
-        stroke-dashoffset: -20;
-      }
+
+    /* Cyber Status Light */
+    @keyframes statusPulse {
+      0%, 100% { fill: #10b981; filter: drop-shadow(0 0 2px #10b981); }
+      50% { fill: #059669; filter: drop-shadow(0 0 6px #10b981); }
     }
-    .conn-line {
-      stroke: #21262d;
-      stroke-width: 1.5;
-      stroke-dasharray: 4 2;
+    .status-dot {
+      animation: statusPulse 2s infinite;
     }
-    .active-conn {
-      stroke: url(#accent-cyan);
-      stroke-width: 1.5;
-      stroke-dasharray: 5 5;
-      animation: dash 1.5s linear infinite;
-    }
-    
-    /* Code lines animation sequence */
-    @keyframes reveal {
-      from { opacity: 0; transform: translateY(5px); }
+
+    /* Terminal Message Reveal */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .line-1 { animation: reveal 0.5s ease-out 0.2s both; }
-    .line-2 { animation: reveal 0.5s ease-out 0.8s both; }
-    .line-3 { animation: reveal 0.5s ease-out 1.4s both; }
-    .line-4 { animation: reveal 0.5s ease-out 2.0s both; }
-    .line-5 { animation: reveal 0.5s ease-out 2.6s both; }
-    .line-6 { animation: reveal 0.5s ease-out 3.2s both; }
-    .line-7 { animation: reveal 0.5s ease-out 3.8s both; }
-    .line-8 { animation: reveal 0.5s ease-out 4.4s both; }
+    .msg-1 { animation: fadeInUp 0.4s ease-out 0.2s both; }
+    .msg-2 { animation: fadeInUp 0.4s ease-out 0.8s both; }
+    .msg-3 { animation: fadeInUp 0.4s ease-out 1.4s both; }
+    .msg-4 { animation: fadeInUp 0.4s ease-out 2.0s both; }
+    .msg-5 { animation: fadeInUp 0.4s ease-out 2.6s both; }
+    .msg-6 { animation: fadeInUp 0.4s ease-out 3.2s both; }
+    .msg-7 { animation: fadeInUp 0.4s ease-out 3.8s both; }
+    .msg-8 { animation: fadeInUp 0.4s ease-out 4.4s both; }
+
+    /* Code stream background falling elements */
+    @keyframes matrixStream {
+      0% { stroke-dashoffset: 40; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .stream-line {
+      stroke: #161b2c;
+      stroke-width: 1;
+      stroke-dasharray: 10 30;
+      animation: matrixStream 3s linear infinite;
+    }
     
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-6px); }
+    @keyframes floatParticle {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+      50% { transform: translateY(-10px) scale(1.2); opacity: 0.8; }
     }
-    .floating-box {
-      animation: float 4s infinite ease-in-out;
-    }
+    .particle-1 { animation: floatParticle 4s infinite ease-in-out; transform-origin: 250px 100px; }
+    .particle-2 { animation: floatParticle 5s infinite ease-in-out 1s; transform-origin: 290px 180px; }
   </style>
 
-  <!-- IDE Window Frame -->
-  <rect class="window-bg" width="350" height="280" />
+  <!-- Glassmorphic Window Outer -->
+  <rect class="window" width="350" height="280" />
   
-  <!-- Title Bar -->
-  <path class="title-bar" d="M0,10 C0,4.48 4.48,0 10,0 L340,0 C345.52,0 350,4.48 350,10 L350,30 L0,30 Z" />
+  <!-- Window Header Bar -->
+  <path class="window-header" d="M0,16 C0,7.16 7.16,0 16,0 L334,0 C342.84,0 350,7.16 350,16 L350,28 L0,28 Z" />
   
-  <!-- macOS style window buttons -->
-  <circle cx="20" cy="15" r="5" fill="#f85149" />
-  <circle cx="35" cy="15" r="5" fill="#f0883e" />
-  <circle cx="50" cy="15" r="5" fill="#56d364" />
+  <!-- Header Control Dots -->
+  <circle cx="20" cy="14" r="4.5" fill="#ff5f56" />
+  <circle cx="34" cy="14" r="4.5" fill="#ffbd2e" />
+  <circle cx="48" cy="14" r="4.5" fill="#27c93f" />
   
-  <!-- File tab -->
-  <path d="M75,30 L83,12 L162,12 L170,30 Z" fill="#0d1117" />
-  <text x="92" y="24" fill="#a855f7" font-family="'Fira Code', monospace" font-size="10" font-weight="bold">🐍 main.py</text>
+  <!-- Header Title / Status -->
+  <text x="75" y="17" fill="#8b949e" font-family="'Fira Code', monospace" font-size="9" font-weight="bold">AGENT_WORKSPACE // ACTIVE</text>
+  <circle class="status-dot" cx="240" cy="14" r="3.5" />
 
-  <!-- Workspace Divider -->
-  <line x1="195" y1="30" x2="195" y2="280" stroke="#30363d" stroke-dasharray="2 2" />
+  <!-- Background Grid & Matrix Lines -->
+  <line x1="180" y1="28" x2="180" y2="280" stroke="#161b2c" stroke-dasharray="2 2" />
+  <line class="stream-line" x1="220" y1="30" x2="220" y2="270" />
+  <line class="stream-line" x1="310" y1="30" x2="310" y2="270" />
 
-  <!-- Code Editor Side (Left) -->
-  <g transform="translate(12, 50)" class="code-text">
-    <!-- Line numbers -->
-    <g fill="#8b949e">
-      <text x="0" y="15">1</text>
-      <text x="0" y="32">2</text>
-      <text x="0" y="49">3</text>
-      <text x="0" y="66">4</text>
-      <text x="0" y="83">5</text>
-      <text x="0" y="100">6</text>
-      <text x="0" y="117">7</text>
-      <text x="0" y="134">8</text>
-      <text x="0" y="151">9</text>
-      <text x="0" y="168">10</text>
+  <!-- LEFT SIDE: AI Diagnostics Terminal -->
+  <g transform="translate(15, 45)" class="terminal-text">
+    <g class="msg-1">
+      <text x="0" y="15" class="system">&gt; init_agent_nexus()</text>
+    </g>
+    <g class="msg-2">
+      <text x="0" y="30" class="muted">Connecting to host...</text>
+      <text x="120" y="30" class="success">[CONNECTED]</text>
+    </g>
+    <g class="msg-3">
+      <text x="0" y="45" class="accent">&gt;&gt; neural_layers = [64, 32, 16, 2]</text>
+    </g>
+    <g class="msg-4">
+      <text x="0" y="60" class="muted">Initializing backward pass...</text>
+    </g>
+    <g class="msg-5">
+      <text x="0" y="75" class="success">&gt;&gt; optimization: AdamW</text>
+    </g>
+    <g class="msg-6">
+      <text x="0" y="95" class="accent">&gt; training_loop.start()</text>
+    </g>
+    <g class="msg-7">
+      <text x="0" y="115" class="system">Epoch 042/100 // Active</text>
+    </g>
+    <g class="msg-8">
+      <text x="0" y="135" class="muted">└── loss: </text>
+      <text x="55" y="135" class="highlight">0.0108</text>
+      <text x="0" y="150" class="muted">└── acc:  </text>
+      <text x="55" y="150" class="success">99.92%</text>
     </g>
 
-    <!-- Coding Lines (with sequential reveal effect) -->
-    <g transform="translate(18, 0)">
-      <g class="line-1">
-        <text x="0" y="15"><tspan class="keyword">import</tspan> <tspan class="variable">torch</tspan></text>
-      </g>
-      
-      <g class="line-2">
-        <text x="0" y="32"><tspan class="keyword">import</tspan> <tspan class="variable">torch.nn</tspan> <tspan class="keyword">as</tspan> <tspan class="variable">nn</tspan></text>
-      </g>
+    <!-- Terminal Prompt Line -->
+    <text x="0" y="180" class="system">&gt;</text>
+    <rect class="cursor" x="10" y="171" width="5" height="11" />
+  </g>
 
-      <g class="line-3">
-        <text x="0" y="49"><tspan class="keyword">class</tspan> <tspan class="function">Model</tspan><tspan class="variable">(nn.Module):</tspan></text>
-      </g>
+  <!-- RIGHT SIDE: The Holographic Neural Fusion Core -->
+  <g>
+    <!-- Glow behind the hologram -->
+    <circle class="core" cx="270" cy="145" r="35" fill="url(#core-glow)" />
 
-      <g class="line-4">
-        <text x="12" y="66"><tspan class="keyword">def</tspan> <tspan class="function">__init__</tspan><tspan class="variable">(self):</tspan></text>
-      </g>
-
-      <g class="line-5">
-        <text x="24" y="83"><tspan class="variable">super().__init__()</tspan></text>
-      </g>
-
-      <g class="line-6">
-        <text x="24" y="100"><tspan class="variable">self.fc = nn.Linear(4, 2)</tspan></text>
-      </g>
-
-      <g class="line-7">
-        <text x="0" y="125" class="comment"># Training...</text>
-      </g>
-      
-      <g class="line-8">
-        <text x="0" y="145" fill="#58a6ff">&gt; loss: 0.142</text>
-        <text x="0" y="162" fill="#56d364">&gt; acc: 98.6%</text>
-      </g>
-      
-      <!-- Prompt cursor -->
-      <rect class="cursor" x="82" y="151" width="6" height="12" />
+    <!-- Concentric Orbit Ring 1 (Yaw-angled) -->
+    <g class="orbit-1">
+      <ellipse cx="270" cy="145" rx="45" ry="18" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="6 4" opacity="0.6" transform="rotate(-15 270 145)" />
+      <!-- Orbit Nodes -->
+      <circle cx="225" cy="145" r="3.5" fill="#00f0ff" />
+      <circle cx="315" cy="145" r="3.5" fill="#00f0ff" />
+      <circle cx="270" cy="127" r="2.5" fill="#a855f7" />
     </g>
+
+    <!-- Concentric Orbit Ring 2 (Pitch-angled) -->
+    <g class="orbit-2">
+      <ellipse cx="270" cy="145" rx="40" ry="15" fill="none" stroke="#ec4899" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5" transform="rotate(45 270 145)" />
+      <!-- Orbit Nodes -->
+      <circle cx="270" cy="130" r="3" fill="#ec4899" />
+      <circle cx="270" cy="160" r="4" fill="#a855f7" />
+    </g>
+
+    <!-- Orbit Ring 3 (Inner Fast Orbit) -->
+    <g class="orbit-1">
+      <circle cx="270" cy="145" r="25" fill="none" stroke="#a855f7" stroke-width="0.8" opacity="0.4" />
+      <circle cx="250" cy="130" r="2" fill="#ffffff" />
+    </g>
+
+    <!-- Central Floating Neural Orb -->
+    <circle cx="270" cy="145" r="10" fill="#00f0ff" filter="drop-shadow(0 0 8px #00f0ff)" />
+    <circle cx="270" cy="145" r="4" fill="#ffffff" />
+
+    <!-- Glowing Tech Particle Dots Floating in Space -->
+    <g class="particle-1">
+      <circle cx="245" cy="95" r="1.5" fill="#00f0ff" />
+      <line x1="245" y1="95" x2="235" y2="90" stroke="#00f0ff" stroke-width="0.5" opacity="0.5" />
+    </g>
+    <g class="particle-2">
+      <circle cx="300" cy="195" r="2.0" fill="#ec4899" />
+      <line x1="300" y1="195" x2="310" y2="200" stroke="#ec4899" stroke-width="0.5" opacity="0.5" />
+    </g>
+    <circle cx="290" cy="90" r="1" fill="#ffffff" opacity="0.8" />
+    <circle cx="230" cy="180" r="1" fill="#ffffff" opacity="0.5" />
+
+    <!-- Mathematical Text Labels -->
+    <text x="250" y="78" fill="#4b5563" font-family="'Fira Code', monospace" font-size="7">loss_func</text>
+    <text x="278" y="222" fill="#4b5563" font-family="'Fira Code', monospace" font-size="7">backprop</text>
   </g>
 
-  <!-- AI Nexus Visualizer Side (Right) -->
-  <g class="floating-box">
-    <!-- Connection lines -->
-    <path class="conn-line" d="M 270,150 L 225,95" />
-    <path class="conn-line" d="M 270,150 L 315,95" />
-    <path class="conn-line" d="M 270,150 L 225,205" />
-    <path class="conn-line" d="M 270,150 L 315,205" />
-    
-    <!-- Active animated data pathways -->
-    <path class="active-conn" d="M 225,95 L 270,150 L 315,205" />
-    <path class="active-conn" d="M 225,205 L 270,150 L 315,95" />
-
-    <!-- Nodes -->
-    <circle cx="225" cy="95" r="7" fill="#a855f7" opacity="0.85" />
-    <circle cx="315" cy="95" r="7" fill="#ec4899" opacity="0.85" />
-    <circle cx="225" cy="205" r="7" fill="#3b82f6" opacity="0.85" />
-    <circle cx="315" cy="205" r="7" fill="#00f0ff" opacity="0.85" />
-
-    <!-- Pulse effect ring behind the core -->
-    <circle class="ai-node" cx="270" cy="150" r="20" fill="none" stroke="#00f0ff" stroke-width="1.5" />
-    
-    <!-- Central AI Core Node -->
-    <circle cx="270" cy="150" r="12" fill="url(#accent-cyan)" />
-    <circle cx="270" cy="150" r="5" fill="#ffffff" />
-    
-    <!-- Floating labels -->
-    <text x="210" y="70" fill="#8b949e" font-family="monospace" font-size="8">f(x)</text>
-    <text x="310" y="70" fill="#8b949e" font-family="monospace" font-size="8">w*x+b</text>
-    <text x="245" y="240" fill="#a855f7" font-family="monospace" font-size="10" font-weight="bold">AI Core</text>
-  </g>
+  <!-- Bottom Visual Waveform / Tech Border -->
+  <path d="M 12 268 L 70 268 L 80 274 L 120 274 L 130 268 L 338 268" fill="none" stroke="#161b2c" stroke-width="1.5" />
+  <path d="M 72 268 L 78 274 L 122 274 L 128 268" fill="none" stroke="url(#neon-glow)" stroke-width="1.5" />
 </svg>
