@@ -6,7 +6,7 @@ To activate it on your profile:
 -->
 
 <p align="center">
-  <img src="github_profile_banner.svg" alt="Hemanth Balaji AI Engineer Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/hemanthbalaji07/hemanthbalaji07/main/github_profile_banner.svg" alt="Hemanth Balaji AI Engineer Banner" width="100%">
 </p>
 
 <h1 align="center">Hi there, I'm Hemanth Balaji! 👋</h1>
