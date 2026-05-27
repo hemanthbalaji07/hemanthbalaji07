@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1422"/>
+      <stop offset="100%" stop-color="#050711"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#ff007f"/>
+    </linearGradient>
+    <linearGradient id="visor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f"/>
+      <stop offset="100%" stop-color="#7000ff"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .frame{fill:url(#bg);stroke:url(#border);stroke-width:1.5;rx:16}
+    .hdr{fill:#090c15}
+    @keyframes wiggle{0%,88%,100%{transform:rotate(0)}92%{transform:rotate(-6deg)}96%{transform:rotate(6deg)}}
+    .el{transform-origin:148px 82px;animation:wiggle 4s infinite}
+    .er{transform-origin:202px 82px;animation:wiggle 4s infinite .2s}
+    @keyframes scanmove{0%{transform:translateY(-3px)}50%{transform:translateY(7px)}100%{transform:translateY(-3px)}}
+    .scn{animation:scanmove 2s linear infinite}
+    @keyframes tl{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    @keyframes tr{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    .pl{animation:tl .3s infinite ease-in-out}
+    .pr{animation:tr .25s infinite ease-in-out .08s}
+    @keyframes kb{0%,100%{fill:#1a2035}50%{fill:#00f0ff}}
+    .k1{animation:kb .6s infinite .1s}
+    .k2{animation:kb .8s infinite .3s}
+    .k3{animation:kb .5s infinite .15s}
+    .k4{animation:kb .7s infinite .4s}
+    @keyframes stm{0%{opacity:0;transform:translateY(0)}50%{opacity:.6}100%{opacity:0;transform:translateY(-25px)}}
+    .s1{animation:stm 3s infinite}
+    .s2{animation:stm 3s infinite 1s}
+    .s3{animation:stm 3s infinite 2s}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    .bub{animation:bob 3s infinite ease-in-out}
+    @keyframes rgb{0%,100%{stroke:#00f0ff}50%{stroke:#ff007f}}
+    .hp{animation:rgb 3s infinite;stroke-width:2.5;fill:none}
+    @keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1}}
+    .star{animation:twinkle 2s infinite}
+  </style>
+
+  <rect class="frame" width="400" height="300"/>
+
+  <path class="hdr" d="M0,16 C0,7 7,0 16,0 L384,0 C393,0 400,7 400,16 L400,30 L0,30Z"/>
+  <circle cx="18" cy="15" r="5" fill="#ff5f56"/>
+  <circle cx="33" cy="15" r="5" fill="#ffbd2e"/>
+  <circle cx="48" cy="15" r="5" fill="#27c93f"/>
+  <text x="70" y="18" fill="#8b949e" font-family="monospace" font-size="10" font-weight="bold">MEOW_TERMINAL</text>
+
+  <!-- Coffee mug -->
+  <g transform="translate(30,130)">
+    <rect x="5" y="0" width="28" height="30" rx="5" fill="#ff007f"/>
+    <path d="M33,7 C40,7 40,23 33,23" fill="none" stroke="#ff007f" stroke-width="3.5" stroke-linecap="round"/>
+    <rect x="0" y="30" width="38" height="3" rx="1.5" fill="#1a2035"/>
+    <path d="M17,8 L14,12 L12,8 L10,12 L15,17 L20,12Z" fill="#fff"/>
+    <circle class="s1" cx="14" cy="-5" r="2" fill="#fff" opacity="0"/>
+    <circle class="s2" cx="20" cy="-5" r="1.8" fill="#fff" opacity="0"/>
+    <circle class="s3" cx="26" cy="-5" r="2.2" fill="#fff" opacity="0"/>
+  </g>
+
+  <!-- Keyboard -->
+  <g transform="translate(95,185)">
+    <rect x="0" y="0" width="140" height="55" rx="8" fill="#0d1117" stroke="#1a2035" stroke-width="1.5"/>
+    <rect x="8" y="7" width="12" height="10" rx="2" class="k1"/>
+    <rect x="24" y="7" width="12" height="10" rx="2" class="k2"/>
+    <rect x="40" y="7" width="12" height="10" rx="2" class="k3"/>
+    <rect x="56" y="7" width="12" height="10" rx="2" class="k4"/>
+    <rect x="72" y="7" width="12" height="10" rx="2" class="k1"/>
+    <rect x="88" y="7" width="12" height="10" rx="2" class="k2"/>
+    <rect x="104" y="7" width="12" height="10" rx="2" class="k3"/>
+    <rect x="120" y="7" width="12" height="10" rx="2" fill="#ff007f"/>
+    <rect x="8" y="21" width="15" height="10" rx="2" fill="#00f0ff"/>
+    <rect x="27" y="21" width="12" height="10" rx="2" class="k4"/>
+    <rect x="43" y="21" width="12" height="10" rx="2" class="k1"/>
+    <rect x="59" y="21" width="12" height="10" rx="2" class="k2"/>
+    <rect x="75" y="21" width="12" height="10" rx="2" class="k3"/>
+    <rect x="91" y="21" width="12" height="10" rx="2" class="k4"/>
+    <rect x="107" y="21" width="25" height="10" rx="2" fill="#7000ff"/>
+    <rect x="8" y="35" width="20" height="10" rx="2" fill="#1a2035"/>
+    <rect x="32" y="35" width="72" height="10" rx="2" class="k2"/>
+    <rect x="108" y="35" width="24" height="10" rx="2" fill="#1a2035"/>
+  </g>
+
+  <!-- Cat body -->
+  <g>
+    <!-- Ears -->
+    <path class="el" d="M140,95 L133,58 L160,75Z" fill="#0d1117" stroke="#1a2035" stroke-width="1.5"/>
+    <path class="el" d="M143,90 L138,65 L156,77Z" fill="#ff007f" opacity=".7"/>
+    <path class="er" d="M210,95 L217,58 L190,75Z" fill="#0d1117" stroke="#1a2035" stroke-width="1.5"/>
+    <path class="er" d="M207,90 L212,65 L194,77Z" fill="#ff007f" opacity=".7"/>
+
+    <!-- Head -->
+    <circle cx="175" cy="110" r="35" fill="#0d1117" stroke="#1a2035" stroke-width="2"/>
+
+    <!-- Cheek tufts -->
+    <path d="M140,110 L126,116 L141,122Z" fill="#0d1117"/>
+    <path d="M210,110 L224,116 L209,122Z" fill="#0d1117"/>
+
+    <!-- Headband -->
+    <path d="M137,92 C137,66 213,66 213,92" fill="none" stroke="#0d1117" stroke-width="5"/>
+    <!-- Left cup -->
+    <rect x="128" y="92" width="12" height="28" rx="6" fill="#090c15" stroke="#1a2035" stroke-width="1.5"/>
+    <ellipse cx="134" cy="106" rx="3.5" ry="9" class="hp"/>
+    <!-- Right cup -->
+    <rect x="210" y="92" width="12" height="28" rx="6" fill="#090c15" stroke="#1a2035" stroke-width="1.5"/>
+    <ellipse cx="216" cy="106" rx="3.5" ry="9" class="hp"/>
+
+    <!-- Visor -->
+    <rect x="142" y="100" width="66" height="18" rx="7" fill="url(#visor)" stroke="#fff" stroke-width="1"/>
+    <path d="M144,107 C165,103 185,103 206,107" fill="none" stroke="#00f0ff" stroke-width="1.5"/>
+    <g class="scn">
+      <line x1="145" y1="105" x2="205" y2="105" stroke="#00f0ff" stroke-width="1.5" opacity=".7"/>
+    </g>
+
+    <!-- Nose -->
+    <path d="M175,123 L172,120 L178,120Z" fill="#ff007f"/>
+    <!-- Mouth -->
+    <path d="M175,123 C172,126 168,126 166,125" fill="none" stroke="#1a2035" stroke-width="1"/>
+    <path d="M175,123 C178,126 182,126 184,125" fill="none" stroke="#1a2035" stroke-width="1"/>
+    <!-- Whiskers -->
+    <line x1="138" y1="126" x2="118" y2="124" stroke="#1a2035" stroke-width="1"/>
+    <line x1="138" y1="130" x2="116" y2="132" stroke="#1a2035" stroke-width="1"/>
+    <line x1="212" y1="126" x2="232" y2="124" stroke="#1a2035" stroke-width="1"/>
+    <line x1="212" y1="130" x2="234" y2="132" stroke="#1a2035" stroke-width="1"/>
+
+    <!-- Body -->
+    <path d="M145,140 C140,180 130,195 125,200 L225,200 C220,195 210,180 205,140" fill="#0d1117"/>
+
+    <!-- Paws -->
+    <g class="pl">
+      <path d="M125,200 L120,185 C118,178 108,175 105,180 L100,200Z" fill="#0d1117" stroke="#1a2035" stroke-width="1"/>
+      <circle cx="110" cy="183" r="4" fill="#ff007f"/>
+    </g>
+    <g class="pr">
+      <path d="M225,200 L230,185 C232,178 242,175 245,180 L250,200Z" fill="#0d1117" stroke="#1a2035" stroke-width="1"/>
+      <circle cx="240" cy="183" r="4" fill="#ff007f"/>
+    </g>
+
+    <!-- Tail -->
+    <path d="M205,145 C240,130 270,155 260,180 C255,190 245,185 250,175 C255,160 240,140 210,150" fill="none" stroke="#0d1117" stroke-width="5"/>
+    <circle cx="260" cy="180" r="5" fill="#ff007f"/>
+  </g>
+
+  <!-- Speech bubble -->
+  <g class="bub">
+    <rect x="245" y="50" width="140" height="32" rx="10" fill="#0d1117" stroke="#00f0ff" stroke-width="1.5"/>
+    <path d="M260,82 L250,90 L265,82" fill="#0d1117" stroke="#00f0ff" stroke-width="1.5"/>
+    <line x1="258" y1="81" x2="267" y2="81" stroke="#0d1117" stroke-width="2"/>
+    <text x="258" y="70" fill="#00f0ff" font-family="monospace" font-size="10" font-weight="bold">git push --force</text>
+  </g>
+
+  <!-- Floating sparkles -->
+  <circle class="star" cx="320" cy="120" r="1.5" fill="#00f0ff" style="animation-delay:0s"/>
+  <circle class="star" cx="80" cy="80" r="2" fill="#ff007f" style="animation-delay:.8s"/>
+  <circle class="star" cx="350" cy="200" r="1.5" fill="#a855f7" style="animation-delay:1.5s"/>
+  <circle class="star" cx="50" cy="250" r="1" fill="#fff" style="animation-delay:2s"/>
+  <text x="300" y="145" fill="#00f0ff" opacity=".3" font-family="monospace" font-size="18">{</text>
+  <text x="350" y="250" fill="#ff007f" opacity=".3" font-family="monospace" font-size="18">}</text>
+</svg>
