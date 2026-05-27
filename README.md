@@ -30,7 +30,7 @@
 <br/>
 
 <!-- ABOUT ME -->
-<img align="right" alt="Coding" width="350" src="https://raw.githubusercontent.com/hemanthbalaji07/hemanthbalaji07/main/coding.svg?v=1"/>
+<img align="right" alt="Coding" width="350" src="https://raw.githubusercontent.com/hemanthbalaji07/hemanthbalaji07/main/coding.svg?v=2"/>
 
 ### 🚀 About Me
 
