@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 280" width="350" height="280">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117" />
+      <stop offset="100%" stop-color="#070a0e" />
+    </linearGradient>
+    
+    <!-- Accent Gradients -->
+    <linearGradient id="accent-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <linearGradient id="accent-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* Window styling */
+    .window-bg {
+      fill: url(#bg-grad);
+      stroke: #30363d;
+      stroke-width: 1.5;
+      rx: 10px;
+    }
+    .title-bar {
+      fill: #161b22;
+      rx: 10px;
+    }
+    
+    /* Code styling */
+    .code-text {
+      font-family: 'Fira Code', 'Segoe UI Monospace', monospace;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .keyword { fill: #ff7b72; font-weight: bold; }
+    .function { fill: #d2a8ff; }
+    .string { fill: #a5d6ff; }
+    .comment { fill: #8b949e; font-style: italic; }
+    .variable { fill: #c9d1d9; }
+    .accent { fill: #ff7b72; }
+    
+    /* Animations */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor {
+      animation: blink 1s infinite;
+      fill: #00f0ff;
+    }
+    
+    @keyframes typeLine {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    /* AI Core pulsing */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6)); }
+    }
+    .ai-node {
+      animation: pulse 3s infinite ease-in-out;
+      transform-origin: 275px 150px;
+    }
+    
+    /* Connection lines pulsing */
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -20;
+      }
+    }
+    .conn-line {
+      stroke: #21262d;
+      stroke-width: 1.5;
+      stroke-dasharray: 4 2;
+    }
+    .active-conn {
+      stroke: url(#accent-cyan);
+      stroke-width: 1.5;
+      stroke-dasharray: 5 5;
+      animation: dash 1.5s linear infinite;
+    }
+    
+    /* Code lines animation sequence */
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .line-1 { animation: reveal 0.5s ease-out 0.2s both; }
+    .line-2 { animation: reveal 0.5s ease-out 0.8s both; }
+    .line-3 { animation: reveal 0.5s ease-out 1.4s both; }
+    .line-4 { animation: reveal 0.5s ease-out 2.0s both; }
+    .line-5 { animation: reveal 0.5s ease-out 2.6s both; }
+    .line-6 { animation: reveal 0.5s ease-out 3.2s both; }
+    .line-7 { animation: reveal 0.5s ease-out 3.8s both; }
+    .line-8 { animation: reveal 0.5s ease-out 4.4s both; }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .floating-box {
+      animation: float 4s infinite ease-in-out;
+    }
+  </style>
+
+  <!-- IDE Window Frame -->
+  <rect class="window-bg" width="350" height="280" />
+  
+  <!-- Title Bar -->
+  <path class="title-bar" d="M0,10 C0,4.48 4.48,0 10,0 L340,0 C345.52,0 350,4.48 350,10 L350,30 L0,30 Z" />
+  
+  <!-- macOS style window buttons -->
+  <circle cx="20" cy="15" r="5" fill="#f85149" />
+  <circle cx="35" cy="15" r="5" fill="#f0883e" />
+  <circle cx="50" cy="15" r="5" fill="#56d364" />
+  
+  <!-- File tab -->
+  <path d="M75,30 L83,12 L162,12 L170,30 Z" fill="#0d1117" />
+  <text x="92" y="24" fill="#a855f7" font-family="'Fira Code', monospace" font-size="10" font-weight="bold">🐍 main.py</text>
+
+  <!-- Workspace Divider -->
+  <line x1="195" y1="30" x2="195" y2="280" stroke="#30363d" stroke-dasharray="2 2" />
+
+  <!-- Code Editor Side (Left) -->
+  <g transform="translate(12, 50)" class="code-text">
+    <!-- Line numbers -->
+    <g fill="#8b949e">
+      <text x="0" y="15">1</text>
+      <text x="0" y="32">2</text>
+      <text x="0" y="49">3</text>
+      <text x="0" y="66">4</text>
+      <text x="0" y="83">5</text>
+      <text x="0" y="100">6</text>
+      <text x="0" y="117">7</text>
+      <text x="0" y="134">8</text>
+      <text x="0" y="151">9</text>
+      <text x="0" y="168">10</text>
+    </g>
+
+    <!-- Coding Lines (with sequential reveal effect) -->
+    <g transform="translate(18, 0)">
+      <g class="line-1">
+        <text x="0" y="15"><tspan class="keyword">import</tspan> <tspan class="variable">torch</tspan></text>
+      </g>
+      
+      <g class="line-2">
+        <text x="0" y="32"><tspan class="keyword">import</tspan> <tspan class="variable">torch.nn</tspan> <tspan class="keyword">as</tspan> <tspan class="variable">nn</tspan></text>
+      </g>
+
+      <g class="line-3">
+        <text x="0" y="49"><tspan class="keyword">class</tspan> <tspan class="function">Model</tspan><tspan class="variable">(nn.Module):</tspan></text>
+      </g>
+
+      <g class="line-4">
+        <text x="12" y="66"><tspan class="keyword">def</tspan> <tspan class="function">__init__</tspan><tspan class="variable">(self):</tspan></text>
+      </g>
+
+      <g class="line-5">
+        <text x="24" y="83"><tspan class="variable">super().__init__()</tspan></text>
+      </g>
+
+      <g class="line-6">
+        <text x="24" y="100"><tspan class="variable">self.fc = nn.Linear(4, 2)</tspan></text>
+      </g>
+
+      <g class="line-7">
+        <text x="0" y="125" class="comment"># Training...</text>
+      </g>
+      
+      <g class="line-8">
+        <text x="0" y="145" fill="#58a6ff">&gt; loss: 0.142</text>
+        <text x="0" y="162" fill="#56d364">&gt; acc: 98.6%</text>
+      </g>
+      
+      <!-- Prompt cursor -->
+      <rect class="cursor" x="82" y="151" width="6" height="12" />
+    </g>
+  </g>
+
+  <!-- AI Nexus Visualizer Side (Right) -->
+  <g class="floating-box">
+    <!-- Connection lines -->
+    <path class="conn-line" d="M 270,150 L 225,95" />
+    <path class="conn-line" d="M 270,150 L 315,95" />
+    <path class="conn-line" d="M 270,150 L 225,205" />
+    <path class="conn-line" d="M 270,150 L 315,205" />
+    
+    <!-- Active animated data pathways -->
+    <path class="active-conn" d="M 225,95 L 270,150 L 315,205" />
+    <path class="active-conn" d="M 225,205 L 270,150 L 315,95" />
+
+    <!-- Nodes -->
+    <circle cx="225" cy="95" r="7" fill="#a855f7" opacity="0.85" />
+    <circle cx="315" cy="95" r="7" fill="#ec4899" opacity="0.85" />
+    <circle cx="225" cy="205" r="7" fill="#3b82f6" opacity="0.85" />
+    <circle cx="315" cy="205" r="7" fill="#00f0ff" opacity="0.85" />
+
+    <!-- Pulse effect ring behind the core -->
+    <circle class="ai-node" cx="270" cy="150" r="20" fill="none" stroke="#00f0ff" stroke-width="1.5" />
+    
+    <!-- Central AI Core Node -->
+    <circle cx="270" cy="150" r="12" fill="url(#accent-cyan)" />
+    <circle cx="270" cy="150" r="5" fill="#ffffff" />
+    
+    <!-- Floating labels -->
+    <text x="210" y="70" fill="#8b949e" font-family="monospace" font-size="8">f(x)</text>
+    <text x="310" y="70" fill="#8b949e" font-family="monospace" font-size="8">w*x+b</text>
+    <text x="245" y="240" fill="#a855f7" font-family="monospace" font-size="10" font-weight="bold">AI Core</text>
+  </g>
+</svg>
