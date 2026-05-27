@@ -1,256 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
   <defs>
-    <!-- Background Gradient -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a051b" />
-      <stop offset="50%" stop-color="#0e0c24" />
-      <stop offset="100%" stop-color="#05020c" />
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a051b"/>
+      <stop offset="100%" stop-color="#05020c"/>
     </linearGradient>
-
-    <!-- Text Gradient -->
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#d946ef" /> <!-- Fuchsia -->
-      <stop offset="50%" stop-color="#a855f7" /> <!-- Purple -->
-      <stop offset="100%" stop-color="#06b6d4" /> <!-- Cyan -->
+    <linearGradient id="tg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d946ef"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
     </linearGradient>
-
-    <!-- Glowing Effects -->
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-
-    <filter id="glow-heavy" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="12" result="blur1" />
-      <feGaussianBlur stdDeviation="4" result="blur2" />
-      <feMerge>
-        <feMergeNode in="blur1" />
-        <feMergeNode in="blur2" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
+    <style>
+      .a1{animation:p1 3s ease-in-out infinite alternate}
+      .a2{animation:p2 4s ease-in-out infinite alternate}
+      .a3{animation:dash 18s linear infinite}
+      .a4{animation:dash 10s linear infinite}
+      .a5{animation:fl 6s ease-in-out infinite alternate}
+      @keyframes p1{0%{opacity:.5}100%{opacity:1}}
+      @keyframes p2{0%{opacity:.4}100%{opacity:.9}}
+      @keyframes dash{to{stroke-dashoffset:-300}}
+      @keyframes fl{0%{transform:translateY(0)}100%{transform:translateY(-6px)}}
+    </style>
   </defs>
 
-  <style>
-    /* CSS Styles and Keyframe Animations */
-    .bg {
-      fill: url(#bgGrad);
-    }
+  <rect width="1200" height="400" fill="url(#bg)"/>
 
-    /* 3D Moving Perspective Grid */
-    .grid-lines {
-      stroke: #3b0764;
-      stroke-width: 1;
-      opacity: 0.15;
-      animation: gridShift 8s linear infinite;
-    }
+  <line x1="0" y1="200" x2="1200" y2="200" stroke="#3b0764" stroke-width="1" opacity=".15"/>
+  <line x1="0" y1="240" x2="1200" y2="240" stroke="#3b0764" stroke-width="1" opacity=".15"/>
+  <line x1="0" y1="280" x2="1200" y2="280" stroke="#3b0764" stroke-width="1" opacity=".15"/>
+  <line x1="0" y1="320" x2="1200" y2="320" stroke="#3b0764" stroke-width="1" opacity=".15"/>
+  <line x1="0" y1="360" x2="1200" y2="360" stroke="#3b0764" stroke-width="1" opacity=".15"/>
 
-    @keyframes gridShift {
-      0% {
-        transform: translateY(0px);
-      }
-      100% {
-        transform: translateY(40px);
-      }
-    }
+  <line x1="600" y1="150" x2="0" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
+  <line x1="600" y1="150" x2="200" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
+  <line x1="600" y1="150" x2="400" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
+  <line x1="600" y1="150" x2="800" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
+  <line x1="600" y1="150" x2="1000" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
+  <line x1="600" y1="150" x2="1200" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
 
-    /* Neural Network Animations */
-    .node {
-      fill: #06b6d4;
-      filter: url(#glow);
-      animation: pulseNode 3s ease-in-out infinite alternate;
-    }
-    
-    .node-violet {
-      fill: #d946ef;
-      filter: url(#glow);
-      animation: pulseNode 4s ease-in-out infinite alternate;
-      animation-delay: 1s;
-    }
+  <line x1="100" y1="100" x2="200" y2="80" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
+  <line x1="200" y1="80" x2="280" y2="180" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
+  <line x1="100" y1="100" x2="150" y2="220" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
+  <line x1="150" y1="220" x2="280" y2="180" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
+  <line x1="150" y1="220" x2="80" y2="290" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
+  <line x1="280" y1="180" x2="220" y2="310" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
+  <line x1="80" y1="290" x2="220" y2="310" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
 
-    .connection {
-      stroke: #a855f7;
-      stroke-width: 0.8;
-      stroke-dasharray: 6 12;
-      opacity: 0.3;
-      animation: dash 20s linear infinite;
-    }
+  <circle cx="100" cy="100" r="6" fill="#06b6d4" filter="url(#glow)" class="a1"/>
+  <circle cx="200" cy="80" r="8" fill="#d946ef" filter="url(#glow)" class="a2"/>
+  <circle cx="280" cy="180" r="10" fill="#06b6d4" filter="url(#glow)" class="a1"/>
+  <circle cx="150" cy="220" r="7" fill="#d946ef" filter="url(#glow)" class="a2"/>
+  <circle cx="80" cy="290" r="5" fill="#06b6d4" filter="url(#glow)" class="a1"/>
+  <circle cx="220" cy="310" r="9" fill="#d946ef" filter="url(#glow)" class="a2"/>
 
-    .connection-fast {
-      stroke: #06b6d4;
-      stroke-width: 1;
-      stroke-dasharray: 4 8;
-      opacity: 0.4;
-      animation: dash 10s linear infinite;
-    }
+  <line x1="950" y1="180" x2="1070" y2="100" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
+  <line x1="1070" y1="100" x2="1150" y2="200" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
+  <line x1="950" y1="180" x2="1010" y2="290" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
+  <line x1="1010" y1="290" x2="1150" y2="200" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
+  <line x1="930" y1="110" x2="1070" y2="100" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
+  <line x1="1010" y1="290" x2="1090" y2="330" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
+  <line x1="1150" y1="200" x2="1090" y2="330" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
 
-    @keyframes pulseNode {
-      0% {
-        transform: scale(0.8);
-        opacity: 0.5;
-      }
-      100% {
-        transform: scale(1.2);
-        opacity: 1;
-      }
-    }
+  <circle cx="950" cy="180" r="8" fill="#d946ef" filter="url(#glow)" class="a2"/>
+  <circle cx="1070" cy="100" r="6" fill="#06b6d4" filter="url(#glow)" class="a1"/>
+  <circle cx="1150" cy="200" r="11" fill="#d946ef" filter="url(#glow)" class="a2"/>
+  <circle cx="1010" cy="290" r="7" fill="#06b6d4" filter="url(#glow)" class="a1"/>
+  <circle cx="930" cy="110" r="5" fill="#d946ef" filter="url(#glow)" class="a2"/>
+  <circle cx="1090" cy="330" r="9" fill="#06b6d4" filter="url(#glow)" class="a1"/>
 
-    @keyframes dash {
-      to {
-        stroke-dashoffset: -360;
-      }
-    }
-
-    /* Typography styling */
-    .title-text {
-      font-family: 'system-ui', -apple-system, sans-serif;
-      font-size: 56px;
-      font-weight: 800;
-      fill: url(#textGrad);
-      letter-spacing: 4px;
-      filter: url(#glow);
-      animation: titleFloat 6s ease-in-out infinite alternate;
-    }
-
-    .subtitle-text {
-      font-family: 'system-ui', -apple-system, sans-serif;
-      font-size: 20px;
-      font-weight: 600;
-      fill: #9ca3af;
-      letter-spacing: 6px;
-    }
-
-    .tag-container {
-      fill: #1e1b4b;
-      stroke: #a855f7;
-      stroke-width: 1.5;
-      rx: 8;
-      filter: url(#glow);
-    }
-
-    .tag-text {
-      font-family: 'system-ui', -apple-system, sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      fill: #06b6d4;
-      letter-spacing: 1px;
-    }
-
-    @keyframes titleFloat {
-      0% {
-        transform: translateY(0px);
-      }
-      100% {
-        transform: translateY(-8px);
-      }
-    }
-
-    /* Scanning laser effect */
-    .laser {
-      stroke: url(#textGrad);
-      stroke-width: 1.5;
-      opacity: 0.6;
-      filter: url(#glow-heavy);
-      animation: laserMove 6s ease-in-out infinite alternate;
-    }
-
-    @keyframes laserMove {
-      0% {
-        y1: 10px; y2: 10px;
-        opacity: 0.1;
-      }
-      50% {
-        opacity: 0.7;
-      }
-      100% {
-        y1: 390px; y2: 390px;
-        opacity: 0.1;
-      }
-    }
-  </style>
-
-  <!-- Background Rect -->
-  <rect width="100%" height="100%" class="bg" />
-
-  <!-- 3D Perspective Lines / Horizon Grid -->
-  <g opacity="0.7">
-    <!-- Perspective horizontal travel lines -->
-    <path class="grid-lines" d="M0,200 L1200,200 M0,240 L1200,240 M0,280 L1200,280 M0,320 L1200,320 M0,360 L1200,360 M0,400 L1200,400" />
-    
-    <!-- Vanishing point radial grid lines -->
-    <line x1="600" y1="150" x2="-200" y2="400" stroke="#3b0764" stroke-width="1.5" opacity="0.3" />
-    <line x1="600" y1="150" x2="0" y2="400" stroke="#3b0764" stroke-width="1.5" opacity="0.3" />
-    <line x1="600" y1="150" x2="200" y2="400" stroke="#3b0764" stroke-width="1.5" opacity="0.3" />
-    <line x1="600" y1="150" x2="400" y2="400" stroke="#3b0764" stroke-width="1.5" opacity="0.3" />
-    <line x1="600" y1="150" x2="800" y2="400" stroke="#3b0764" stroke-width="1.5" opacity="0.3" />
-    <line x1="600" y1="150" x2="1000" y2="400" stroke="#3b0764" stroke-width="1.5" opacity="0.3" />
-    <line x1="600" y1="150" x2="1200" y2="400" stroke="#3b0764" stroke-width="1.5" opacity="0.3" />
-    <line x1="600" y1="150" x2="1400" y2="400" stroke="#3b0764" stroke-width="1.5" opacity="0.3" />
+  <g filter="url(#glow)" class="a5" text-anchor="middle">
+    <text x="600" y="185" font-family="Arial Black, Arial, sans-serif" font-size="58" font-weight="900" letter-spacing="4" fill="url(#tg)">HEMANTH BALAJI</text>
+    <text x="600" y="232" font-family="Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="8" fill="#9ca3af">AI ENGINEER IN-TRAINING</text>
   </g>
 
-  <!-- Scanning Laser Line -->
-  <line x1="0" y1="50" x2="1200" y2="50" class="laser" />
+  <rect x="440" y="258" width="100" height="30" rx="8" fill="#1e1b4b" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="490" y="278" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#06b6d4" text-anchor="middle" letter-spacing="1">PYTHON</text>
 
-  <!-- Neural Network Elements (Left Side) -->
-  <g transform="translate(10, 0)">
-    <line x1="100" y1="100" x2="200" y2="80" class="connection" />
-    <line x1="200" y1="80" x2="280" y2="180" class="connection-fast" />
-    <line x1="100" y1="100" x2="150" y2="220" class="connection" />
-    <line x1="150" y1="220" x2="280" y2="180" class="connection" />
-    <line x1="150" y1="220" x2="80" y2="280" class="connection" />
-    <line x1="280" y1="180" x2="220" y2="300" class="connection" />
-    <line x1="80" y1="280" x2="220" y2="300" class="connection-fast" />
+  <rect x="550" y="258" width="100" height="30" rx="8" fill="#1e1b4b" stroke="#d946ef" stroke-width="1.5"/>
+  <text x="600" y="278" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#d946ef" text-anchor="middle" letter-spacing="1">PYTORCH</text>
 
-    <circle cx="100" cy="100" r="6" class="node" />
-    <circle cx="200" cy="80" r="8" class="node-violet" />
-    <circle cx="280" cy="180" r="10" class="node" />
-    <circle cx="150" cy="220" r="7" class="node-violet" />
-    <circle cx="80" cy="280" r="5" class="node" />
-    <circle cx="220" cy="300" r="9" class="node-violet" />
-  </g>
-
-  <!-- Neural Network Elements (Right Side) -->
-  <g transform="translate(850, 0)">
-    <line x1="100" y1="180" x2="220" y2="100" class="connection-fast" />
-    <line x1="220" y1="100" x2="300" y2="200" class="connection" />
-    <line x1="100" y1="180" x2="160" y2="280" class="connection" />
-    <line x1="160" y1="280" x2="300" y2="200" class="connection-fast" />
-    <line x1="160" y1="280" x2="80" y2="110" class="connection" />
-    <line x1="80" y1="110" x2="220" y2="100" class="connection" />
-    <line x1="160" y1="280" x2="240" y2="320" class="connection" />
-    <line x1="300" y1="200" x2="240" y2="320" class="connection" />
-
-    <circle cx="100" cy="180" r="8" class="node-violet" />
-    <circle cx="220" cy="100" r="6" class="node" />
-    <circle cx="300" cy="200" r="11" class="node-violet" />
-    <circle cx="160" cy="280" r="7" class="node" />
-    <circle cx="80" cy="110" r="5" class="node-violet" />
-    <circle cx="240" cy="320" r="9" class="node" />
-  </g>
-
-  <!-- Central Brand Typography -->
-  <g transform="translate(600, 175)" text-anchor="middle">
-    <!-- Main Glowing Title -->
-    <text y="0" class="title-text">HEMANTH BALAJI</text>
-    
-    <!-- Sleek Subtitle -->
-    <text y="50" class="subtitle-text">AI ENGINEER IN-TRAINING</text>
-
-    <!-- Interactive Badges within Banner -->
-    <g transform="translate(-160, 90)">
-      <rect width="100" height="30" class="tag-container" />
-      <text x="50" y="20" text-anchor="middle" class="tag-text">PYTHON</text>
-    </g>
-    <g transform="translate(-50, 90)">
-      <rect width="100" height="30" class="tag-container" stroke="#d946ef" />
-      <text x="50" y="20" text-anchor="middle" class="tag-text" fill="#d946ef">PYTORCH</text>
-    </g>
-    <g transform="translate(60, 90)">
-      <rect width="100" height="30" class="tag-container" stroke="#06b6d4" />
-      <text x="50" y="20" text-anchor="middle" class="tag-text" fill="#06b6d4">LLMS</text>
-    </g>
-  </g>
+  <rect x="660" y="258" width="100" height="30" rx="8" fill="#1e1b4b" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="710" y="278" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#06b6d4" text-anchor="middle" letter-spacing="1">LLMs</text>
 </svg>
