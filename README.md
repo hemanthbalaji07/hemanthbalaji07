@@ -1,121 +1,149 @@
-<!-- 
-This README was custom-designed for Hemanth Balaji by Antigravity.
-To activate it on your profile:
-1. Create a public repository named exactly "hemanthbalaji07"
-2. Commit this README.md and the accompanying github_profile_banner.svg to that repository.
--->
+<!-- HEMANTH BALAJI - GitHub Profile README -->
+<!-- To activate: create a public repo named "hemanthbalaji07" and push these files -->
 
+<!-- 3D ANIMATED WAVE HEADER -->
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Hemanth%20Balaji&fontSize=42&fontColor=ffffff&animation=twinkling&fontAlignY=32&desc=AI%20Engineer%20in%20Training%20%F0%9F%9A%80&descSize=18&descAlignY=52"/>
+
+<!-- 3D CINEMATIC BANNER -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/hemanthbalaji07/hemanthbalaji07/main/github_profile_banner.svg" alt="Hemanth Balaji AI Engineer Banner" width="100%">
+  <img src="https://raw.githubusercontent.com/hemanthbalaji07/hemanthbalaji07/main/header.png" alt="Hemanth Balaji - AI Engineer Banner" width="100%"/>
 </p>
 
-<h1 align="center">Hi there, I'm Hemanth Balaji! 👋</h1>
-
+<!-- TYPING ANIMATION - Name cycles through roles -->
 <p align="center">
-  <b>1st-Year Tech Student & Aspiring AI Engineer • Proactively Building & Documenting the Future of AI</b>
+  <a href="https://github.com/hemanthbalaji07">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=A855F7&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=100&lines=%F0%9F%91%8B+Hi%2C+I'm+Hemanth+Balaji;%F0%9F%92%BB+Aspiring+AI+Engineer;%F0%9F%90%8D+Currently+Mastering+Python;%F0%9F%A7%A0+On+a+Mission+to+Build+AI+Systems;%F0%9F%9A%80+1st+Year+Student+%7C+Dreaming+Big" alt="Typing SVG"/>
+  </a>
 </p>
 
+<!-- PROFILE BADGES ROW -->
 <p align="center">
   <a href="https://www.linkedin.com/in/hemanth-balaji-r-m" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
-  </a>
-  <a href="mailto:hemanthbalaji08@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge"/>
-  </a>
-  <img src="https://komarev.com/ghpvc/?username=hemanthbalaji07&color=a855f7&style=for-the-badge&label=Profile+Views" alt="Profile Views" />
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>&nbsp;
+  <a href="mailto:hemanthbalaji08@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>&nbsp;
+  <a href="https://github.com/hemanthbalaji07">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>&nbsp;
+  <img src="https://komarev.com/ghpvc/?username=hemanthbalaji07&color=a855f7&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views"/>
 </p>
 
----
+<br/>
 
-### 🚀 About Me & My Ambition
+<!-- ABOUT ME -->
+<img align="right" alt="Coding" width="350" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif"/>
 
-I am a **1st-year computer science student** who has just embarked on my journey to become an **AI Engineer**! I believe in starting early and learning by doing. I am documenting my daily progress, coding exercises, and projects right from the absolute basics.
+### 🚀 About Me
 
-📂 **[ai-engineering-journey](https://github.com/hemanthbalaji07/ai-engineering-journey)** — My hands-on repository where I am documenting my day-to-day coding journey, notes, and milestones.
+I am a **1st-year Computer Science student** who has just started my journey to become an **AI Engineer**!
 
-* **🌱 Just Getting Started**: I am currently focused on mastering **Python** programming from scratch and building strong core logic foundations.
-* **💡 The Long-Term Vision**: I am incredibly excited about Machine Learning, Neural Networks, Large Language Models (LLMs), and autonomous AI systems, and I aim to master these step-by-step.
-* **🎯 My Goal**: Building a rock-solid computer science and programming foundation in my 1st year, paving the way to engineering intelligent software.
+I believe in starting early and learning by doing. Right now, I am focused on building my Python skills from scratch and documenting every step of my growth.
 
----
+- 🐍 **Currently Learning**: Python programming from the ground up
+- 📂 **My Journey Repo**: [ai-engineering-journey](https://github.com/hemanthbalaji07/ai-engineering-journey)
+- 🎯 **Dream Role**: AI Engineer
+- 💡 **Excited About**: Machine Learning, Neural Networks, LLMs
+- ⚡ **Fun Fact**: I started coding in my 1st year because I couldn't wait!
 
-### 🗺️ My AI Engineering Learning Roadmap
-
-I am committed to showing my real, honest growth. Here is my structured roadmap as I build my skills from the ground up:
-
-* **Phase 1: Programming Fundamentals & Logic** 🟨 *Current Focus*
-  * Mastering Python syntax, data structures, and algorithms.
-  * Version control using Git and collaborative workflows on GitHub.
-* **Phase 2: Mathematical Foundations & Data** 🚀 *Next Step*
-  * Core mathematics: Linear Algebra, Calculus, and Probability.
-  * Data manipulation and analytics using SQL, NumPy, and Pandas.
-* **Phase 3: Classical Machine Learning** 🚀 *Upcoming Goal*
-  * Traditional regression, classification, and clustering models with Scikit-Learn.
-  * Building clean pipelines and evaluating model metrics.
-* **Phase 4: Deep Learning & Generative AI** 🚀 *Ultimate Goal*
-  * Custom neural networks with PyTorch.
-  * Fine-tuning Large Language Models and building advanced generative AI agents.
+<br clear="both"/>
 
 ---
 
-### 🛠️ Technical Toolbox
-
-<table width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <h4>💻 Programming Languages</h4>
-      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>&nbsp;
-      <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white" alt="SQL"/>&nbsp;
-      <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++"/>&nbsp;
-      <img src="https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white" alt="Bash"/>
-      <br/><br/>
-      <h4>🧠 Machine & Deep Learning</h4>
-      <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch"/>&nbsp;
-      <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow"/>&nbsp;
-      <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/>&nbsp;
-      <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy"/>&nbsp;
-      <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas"/>
-    </td>
-    <td width="50%" valign="top">
-      <h4>🤖 LLMs & Generative AI</h4>
-      <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face"/>&nbsp;
-      <img src="https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI"/>&nbsp;
-      <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white" alt="LangChain"/>&nbsp;
-      <img src="https://img.shields.io/badge/Vector%20DBs-0052CC?style=flat-square&logo=databricks&logoColor=white" alt="Vector DBs"/>
-      <br/><br/>
-      <h4>🛠️ Developer Ecosystem</h4>
-      <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git"/>&nbsp;
-      <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"/>&nbsp;
-      <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux"/>&nbsp;
-      <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white" alt="VS Code"/>
-    </td>
-  </tr>
-</table>
+<!-- ANIMATED DIVIDER -->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
 
 ---
 
-### 📊 GitHub Activity & Metrics
+### 🗺️ My AI Engineering Roadmap
 
-<table align="center" width="100%">
-  <tr>
-    <td width="50%" align="center" valign="top">
-      <img src="https://github-readme-stats.vercel.app/api?username=hemanthbalaji07&show_icons=true&title_color=a970ff&icon_color=00f0ff&text_color=ffffff&bg_color=0d1117&hide_border=false&border_color=30363d" alt="GitHub Stats" width="100%"/>
-    </td>
-    <td width="50%" align="center" valign="top">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hemanthbalaji07&layout=compact&title_color=a970ff&icon_color=00f0ff&text_color=ffffff&bg_color=0d1117&hide_border=false&border_color=30363d" alt="Top Languages" width="100%"/>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center" valign="top">
-      <br/>
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=hemanthbalaji07&theme=dark&background=0d1117&ring=a970ff&fire=00f0ff&currStreakNum=ffffff&sideNums=ffffff&sideLabels=ffffff&dates=ffffff" alt="GitHub Streak" width="100%"/>
-    </td>
-  </tr>
-</table>
+> _"Every expert was once a beginner."_ — I'm documenting my real, honest growth.
+
+| Phase | Focus Area | Status |
+|:---:|:---|:---:|
+| 🟨 **Phase 1** | **Python Fundamentals** — Syntax, Data Structures, Algorithms, Git | 🔥 *In Progress* |
+| ⬜ **Phase 2** | **Math Foundations** — Linear Algebra, Calculus, Probability, SQL | 📋 *Next Up* |
+| ⬜ **Phase 3** | **Machine Learning** — Scikit-Learn, Regression, Classification | 🎯 *Upcoming* |
+| ⬜ **Phase 4** | **Deep Learning** — PyTorch, Neural Networks, CNNs, NLP | 🚀 *Future Goal* |
+| ⬜ **Phase 5** | **Generative AI** — LLMs, Fine-Tuning, RAG, AI Agents | ✨ *Ultimate Goal* |
 
 ---
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+
+---
+
+### 🛠️ Tech Stack I'm Building
 
 <p align="center">
-  <i>"The best way to predict the future is to invent it." — Alan Kay</i><br/>
-  <b>Thank you for visiting! Feel free to explore my repositories or connect. Let's build something intelligent together!</b>
+
+#### Currently Learning
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code"/>
 </p>
+
+#### On My Radar (Coming Soon)
+<p align="center">
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch"/>
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow"/>
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/>
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
+  <img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face"/>
+  <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI"/>
+  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=chainlink&logoColor=white" alt="LangChain"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"/>
+</p>
+
+</p>
+
+---
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+
+---
+
+### 🏆 GitHub Trophies
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=hemanthbalaji07&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=5" alt="GitHub Trophies"/>
+</p>
+
+---
+
+### 📊 GitHub Stats
+
+<p align="center">
+  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=hemanthbalaji07&show_icons=true&title_color=a970ff&icon_color=00f0ff&text_color=ffffff&bg_color=0d1117&hide_border=true&border_radius=12" alt="GitHub Stats"/>
+  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hemanthbalaji07&layout=compact&title_color=a970ff&icon_color=00f0ff&text_color=ffffff&bg_color=0d1117&hide_border=true&border_radius=12" alt="Top Languages"/>
+</p>
+
+<p align="center">
+  <img width="60%" src="https://github-readme-streak-stats.herokuapp.com/?user=hemanthbalaji07&theme=dark&background=0d1117&ring=a970ff&fire=00f0ff&currStreakNum=ffffff&sideNums=ffffff&sideLabels=a970ff&dates=ffffff&hide_border=true&border_radius=12" alt="GitHub Streak"/>
+</p>
+
+---
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%"/>
+
+---
+
+<!-- QUOTE + FOOTER -->
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Random Dev Quote"/>
+</p>
+
+<br/>
+
+<p align="center">
+  <b>🌟 Thank you for visiting! I'm just getting started on this incredible journey.</b><br/>
+  <b>Let's connect and build something amazing together!</b>
+</p>
+
+<!-- 3D ANIMATED WAVE FOOTER -->
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer"/>
