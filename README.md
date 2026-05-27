@@ -9,7 +9,7 @@
 <!-- TYPING ANIMATION - Name cycles through roles -->
 <p align="center">
   <a href="https://github.com/hemanthbalaji07">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=A855F7&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=100&lines=%F0%9F%91%8B+Hi%2C+I'm+Hemanth+Balaji;%F0%9F%92%BB+Aspiring+AI+Engineer;%F0%9F%90%8D+Currently+Mastering+Python;%F0%9F%A7%A0+On+a+Mission+to+Build+AI+Systems;%F0%9F%9A%80+1st+Year+Student+%7C+Dreaming+Big" alt="Typing SVG"/>
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=A855F7&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=185&lines=%F0%9F%91%8B+Hi%2C+I'm+Hemanth+Balaji;%F0%9F%92%BB+Aspiring+AI+Engineer;%F0%9F%90%8D+Currently+Mastering+Python;%F0%9F%A7%A0+On+a+Mission+to+Build+AI+Systems;%F0%9F%9A%80+1st+Year+Student+%7C+Dreaming+Big" alt="Typing SVG" height="185"/>
   </a>
 </p>
 
@@ -105,23 +105,19 @@ I believe in starting early and learning by doing. Right now, I am focused on bu
 
 ---
 
-### 🏆 GitHub Trophies
+### 📊 GitHub Profile Metrics
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=hemanthbalaji07&theme=algolia&no-frame=true&no-bg=true&column=7&margin-w=5" alt="GitHub Trophies"/>
+  <img width="100%" src="https://metrics.lecoq.io/hemanthbalaji07?theme=neon&config.timezone=Asia%2FKolkata" alt="GitHub Metrics"/>
 </p>
 
 ---
 
-### 📊 GitHub Stats
+### 📈 Activity & Streak
 
 <p align="center">
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=hemanthbalaji07&show_icons=true&title_color=a970ff&icon_color=00f0ff&text_color=ffffff&bg_color=0d1117&hide_border=true&border_radius=12" alt="GitHub Stats"/>
-  <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hemanthbalaji07&layout=compact&title_color=a970ff&icon_color=00f0ff&text_color=ffffff&bg_color=0d1117&hide_border=true&border_radius=12" alt="Top Languages"/>
-</p>
-
-<p align="center">
-  <img width="60%" src="https://github-readme-streak-stats.herokuapp.com/?user=hemanthbalaji07&theme=dark&background=0d1117&ring=a970ff&fire=00f0ff&currStreakNum=ffffff&sideNums=ffffff&sideLabels=a970ff&dates=ffffff&hide_border=true&border_radius=12" alt="GitHub Streak"/>
+  <img width="49%" src="https://github-readme-activity-graph.vercel.app/graph?username=hemanthbalaji07&bg_color=0d1117&color=a970ff&line=00f0ff&point=ffffff&area=true&hide_border=true&border_radius=12" alt="Contribution Graph"/>
+  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=hemanthbalaji07&theme=dark&background=0d1117&ring=a970ff&fire=00f0ff&currStreakNum=ffffff&sideNums=ffffff&sideLabels=a970ff&dates=ffffff&hide_border=true&border_radius=12" alt="GitHub Streak"/>
 </p>
 
 ---
