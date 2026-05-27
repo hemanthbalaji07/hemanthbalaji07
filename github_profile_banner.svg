@@ -1,87 +1,414 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0a051b"/>
-      <stop offset="100%" stop-color="#05020c"/>
+    <!-- Background Gradient (Deep Space Cyberpunk) -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05030f" />
+      <stop offset="50%" stop-color="#0a071c" />
+      <stop offset="100%" stop-color="#110c2e" />
     </linearGradient>
-    <linearGradient id="tg" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#d946ef"/>
-      <stop offset="50%" stop-color="#a855f7"/>
-      <stop offset="100%" stop-color="#06b6d4"/>
+
+    <!-- Glowing Text Gradient -->
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#d946ef" />
+      <stop offset="100%" stop-color="#a855f7" />
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+
+    <!-- Tech Line Gradient (Purple to Cyan) -->
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#00f2fe" stop-opacity="1" />
+      <stop offset="100%" stop-color="#d946ef" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Running Neon Border Gradient -->
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#d946ef" />
+    </linearGradient>
+
+    <!-- Nebulae Gradients -->
+    <radialGradient id="nebPurple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="nebCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="nebPink" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d946ef" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#d946ef" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Filters for Neon Glow -->
+    <filter id="neonGlowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
     </filter>
+    <filter id="neonGlowPurple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
     <style>
-      .a1{animation:p1 3s ease-in-out infinite alternate}
-      .a2{animation:p2 4s ease-in-out infinite alternate}
-      .a3{animation:dash 18s linear infinite}
-      .a4{animation:dash 10s linear infinite}
-      .a5{animation:fl 6s ease-in-out infinite alternate}
-      @keyframes p1{0%{opacity:.5}100%{opacity:1}}
-      @keyframes p2{0%{opacity:.4}100%{opacity:.9}}
-      @keyframes dash{to{stroke-dashoffset:-300}}
-      @keyframes fl{0%{transform:translateY(0)}100%{transform:translateY(-6px)}}
+      @keyframes rotateCW {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes rotateCCW {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-360deg); }
+      }
+      .ring-cw {
+        transform-origin: 280px 200px;
+        animation: rotateCW 18s linear infinite;
+      }
+      .ring-cw-fast {
+        transform-origin: 280px 200px;
+        animation: rotateCW 12s linear infinite;
+      }
+      .ring-ccw {
+        transform-origin: 280px 200px;
+        animation: rotateCCW 15s linear infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 1; }
+      }
+      .pulse-glow-1 { animation: pulse 3s ease-in-out infinite; }
+      .pulse-glow-2 { animation: pulse 4s ease-in-out infinite; animation-delay: 1s; }
+      .pulse-glow-3 { animation: pulse 2.5s ease-in-out infinite; animation-delay: 0.5s; }
+
+      @keyframes flowData {
+        to { stroke-dashoffset: -160; }
+      }
+      .flow-line-1 {
+        stroke-dasharray: 20 60;
+        animation: flowData 4s linear infinite;
+      }
+      .flow-line-2 {
+        stroke-dasharray: 15 45;
+        animation: flowData 3s linear infinite;
+      }
+      .flow-line-fast {
+        stroke-dasharray: 25 75;
+        animation: flowData 2s linear infinite;
+      }
+
+      @keyframes matrixRain {
+        0% { transform: translateY(-300px); }
+        100% { transform: translateY(450px); }
+      }
+      .rain-col {
+        animation: matrixRain 8s linear infinite;
+      }
+      .r-fast { animation-duration: 5s; }
+      .r-mid { animation-duration: 7s; }
+      .r-slow { animation-duration: 10s; }
+
+      .decText {
+        font-family: 'Consolas', 'Courier New', monospace;
+        font-size: 52px;
+        font-weight: 900;
+        fill: #00f2fe;
+        text-anchor: middle;
+        opacity: 0;
+      }
+      .d1 { animation: cycleText 0.8s infinite; }
+      .d2 { animation: cycleText 0.8s infinite; animation-delay: 0.1s; }
+      .d3 { animation: cycleText 0.8s infinite; animation-delay: 0.2s; }
+      .d4 { animation: cycleText 0.8s infinite; animation-delay: 0.3s; }
+      .d5 { animation: cycleText 0.8s infinite; animation-delay: 0.4s; }
+
+      @keyframes cycleText {
+        0%, 20% { opacity: 1; }
+        21%, 100% { opacity: 0; }
+      }
+
+      .decWrapper { animation: fadeOutWrapper 4s forwards; }
+      @keyframes fadeOutWrapper {
+        0%, 95% { opacity: 1; }
+        100% { opacity: 0; pointer-events: none; }
+      }
+
+      .finalText {
+        opacity: 0;
+        animation: revealFinal 4s forwards;
+      }
+      @keyframes revealFinal {
+        0%, 94% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      @keyframes glitchL {
+        0%, 94%, 100% { transform: translate(0, 0); }
+        95% { transform: translate(-3px, 1px); }
+        96% { transform: translate(-1px, -2px); }
+        97% { transform: translate(-2px, 0); }
+        98% { transform: translate(-4px, 2px); }
+      }
+      @keyframes glitchR {
+        0%, 94%, 100% { transform: translate(0, 0); }
+        95% { transform: translate(3px, -1px); }
+        96% { transform: translate(1px, 2px); }
+        97% { transform: translate(2px, 0); }
+        98% { transform: translate(4px, -2px); }
+      }
+      .glitch-r {
+        animation: glitchL 4s infinite;
+        transform-origin: 820px 180px;
+      }
+      .glitch-b {
+        animation: glitchR 4s infinite;
+        transform-origin: 820px 180px;
+      }
+
+      .subText {
+        opacity: 0;
+        animation: revealSub 0.5s ease-out 4.2s forwards;
+      }
+      .subLine {
+        transform: scaleX(0);
+        transform-origin: center;
+        animation: expandLine 1s ease-out 4.5s forwards;
+      }
+      @keyframes revealSub {
+        to { opacity: 1; }
+      }
+      @keyframes expandLine {
+        to { transform: scaleX(1); }
+      }
+
+      .badge-group {
+        opacity: 0;
+        animation: revealSub 0.5s ease-out forwards;
+      }
+      .bg-1 { animation-delay: 4.8s; }
+      .bg-2 { animation-delay: 5.0s; }
+      .bg-3 { animation-delay: 5.2s; }
+      .bg-4 { animation-delay: 5.4s; }
+
+      .running-border {
+        stroke-dasharray: 120 400;
+        animation: runBorder 12s linear infinite;
+      }
+      @keyframes runBorder {
+        to { stroke-dashoffset: -1040; }
+      }
     </style>
   </defs>
 
-  <rect width="1200" height="400" fill="url(#bg)"/>
+  <!-- Background Rect -->
+  <rect width="1200" height="400" fill="url(#bg)" />
 
-  <line x1="0" y1="200" x2="1200" y2="200" stroke="#3b0764" stroke-width="1" opacity=".15"/>
-  <line x1="0" y1="240" x2="1200" y2="240" stroke="#3b0764" stroke-width="1" opacity=".15"/>
-  <line x1="0" y1="280" x2="1200" y2="280" stroke="#3b0764" stroke-width="1" opacity=".15"/>
-  <line x1="0" y1="320" x2="1200" y2="320" stroke="#3b0764" stroke-width="1" opacity=".15"/>
-  <line x1="0" y1="360" x2="1200" y2="360" stroke="#3b0764" stroke-width="1" opacity=".15"/>
+  <!-- Nebulae (Cosmic Glows) -->
+  <circle cx="280" cy="200" r="300" fill="url(#nebPurple)" />
+  <circle cx="820" cy="200" r="280" fill="url(#nebCyan)" />
+  <circle cx="600" cy="350" r="250" fill="url(#nebPink)" />
 
-  <line x1="600" y1="150" x2="0" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
-  <line x1="600" y1="150" x2="200" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
-  <line x1="600" y1="150" x2="400" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
-  <line x1="600" y1="150" x2="800" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
-  <line x1="600" y1="150" x2="1000" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
-  <line x1="600" y1="150" x2="1200" y2="400" stroke="#3b0764" stroke-width="1" opacity=".2"/>
-
-  <line x1="100" y1="100" x2="200" y2="80" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
-  <line x1="200" y1="80" x2="280" y2="180" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
-  <line x1="100" y1="100" x2="150" y2="220" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
-  <line x1="150" y1="220" x2="280" y2="180" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
-  <line x1="150" y1="220" x2="80" y2="290" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
-  <line x1="280" y1="180" x2="220" y2="310" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
-  <line x1="80" y1="290" x2="220" y2="310" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
-
-  <circle cx="100" cy="100" r="6" fill="#06b6d4" filter="url(#glow)" class="a1"/>
-  <circle cx="200" cy="80" r="8" fill="#d946ef" filter="url(#glow)" class="a2"/>
-  <circle cx="280" cy="180" r="10" fill="#06b6d4" filter="url(#glow)" class="a1"/>
-  <circle cx="150" cy="220" r="7" fill="#d946ef" filter="url(#glow)" class="a2"/>
-  <circle cx="80" cy="290" r="5" fill="#06b6d4" filter="url(#glow)" class="a1"/>
-  <circle cx="220" cy="310" r="9" fill="#d946ef" filter="url(#glow)" class="a2"/>
-
-  <line x1="950" y1="180" x2="1070" y2="100" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
-  <line x1="1070" y1="100" x2="1150" y2="200" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
-  <line x1="950" y1="180" x2="1010" y2="290" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
-  <line x1="1010" y1="290" x2="1150" y2="200" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
-  <line x1="930" y1="110" x2="1070" y2="100" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
-  <line x1="1010" y1="290" x2="1090" y2="330" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4 8" opacity=".4" class="a4"/>
-  <line x1="1150" y1="200" x2="1090" y2="330" stroke="#a855f7" stroke-width=".8" stroke-dasharray="6 12" opacity=".35" class="a3"/>
-
-  <circle cx="950" cy="180" r="8" fill="#d946ef" filter="url(#glow)" class="a2"/>
-  <circle cx="1070" cy="100" r="6" fill="#06b6d4" filter="url(#glow)" class="a1"/>
-  <circle cx="1150" cy="200" r="11" fill="#d946ef" filter="url(#glow)" class="a2"/>
-  <circle cx="1010" cy="290" r="7" fill="#06b6d4" filter="url(#glow)" class="a1"/>
-  <circle cx="930" cy="110" r="5" fill="#d946ef" filter="url(#glow)" class="a2"/>
-  <circle cx="1090" cy="330" r="9" fill="#06b6d4" filter="url(#glow)" class="a1"/>
-
-  <g filter="url(#glow)" class="a5" text-anchor="middle">
-    <text x="600" y="185" font-family="Arial Black, Arial, sans-serif" font-size="58" font-weight="900" letter-spacing="4" fill="url(#tg)">HEMANTH BALAJI</text>
-    <text x="600" y="232" font-family="Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="8" fill="#9ca3af">AI ENGINEER IN-TRAINING</text>
+  <!-- Background Cyber Grid (Perspective Lines) -->
+  <g opacity="0.08" stroke="#00f2fe" stroke-width="1">
+    <line x1="600" y1="120" x2="-200" y2="400" />
+    <line x1="600" y1="120" x2="0" y2="400" />
+    <line x1="600" y1="120" x2="200" y2="400" />
+    <line x1="600" y1="120" x2="400" y2="400" />
+    <line x1="600" y1="120" x2="600" y2="400" />
+    <line x1="600" y1="120" x2="800" y2="400" />
+    <line x1="600" y1="120" x2="1000" y2="400" />
+    <line x1="600" y1="120" x2="1200" y2="400" />
+    <line x1="600" y1="120" x2="1400" y2="400" />
   </g>
 
-  <rect x="440" y="258" width="100" height="30" rx="8" fill="#1e1b4b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="490" y="278" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#06b6d4" text-anchor="middle" letter-spacing="1">PYTHON</text>
+  <!-- Horizontals for perspective (Fading in grid) -->
+  <g opacity="0.08" stroke="#00f2fe" stroke-width="1">
+    <line x1="0" y1="150" x2="1200" y2="150" />
+    <line x1="0" y1="190" x2="1200" y2="190" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="0" y1="370" x2="1200" y2="370" />
+  </g>
 
-  <rect x="550" y="258" width="100" height="30" rx="8" fill="#1e1b4b" stroke="#d946ef" stroke-width="1.5"/>
-  <text x="600" y="278" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#d946ef" text-anchor="middle" letter-spacing="1">PYTORCH</text>
+  <!-- Cyber Rain / Falling Binary (Left Side) -->
+  <text x="30" y="0" font-family="'Consolas', monospace" font-size="11" fill="#00f2fe" opacity="0.2" class="rain-col r-fast">
+    <tspan x="30" dy="0">1</tspan>
+    <tspan x="30" dy="16">0</tspan>
+    <tspan x="30" dy="16">λ</tspan>
+    <tspan x="30" dy="16">1</tspan>
+    <tspan x="30" dy="16">0</tspan>
+    <tspan x="30" dy="16">A</tspan>
+    <tspan x="30" dy="16">I</tspan>
+    <tspan x="30" dy="16">0</tspan>
+    <tspan x="30" dy="16">1</tspan>
+  </text>
+  <text x="65" y="0" font-family="'Consolas', monospace" font-size="11" fill="#a855f7" opacity="0.15" class="rain-col r-slow">
+    <tspan x="65" dy="0">0</tspan>
+    <tspan x="65" dy="16">1</tspan>
+    <tspan x="65" dy="16">1</tspan>
+    <tspan x="65" dy="16">Y</tspan>
+    <tspan x="65" dy="16">0</tspan>
+    <tspan x="65" dy="16">1</tspan>
+    <tspan x="65" dy="16">X</tspan>
+    <tspan x="65" dy="16">0</tspan>
+  </text>
 
-  <rect x="660" y="258" width="100" height="30" rx="8" fill="#1e1b4b" stroke="#06b6d4" stroke-width="1.5"/>
-  <text x="710" y="278" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#06b6d4" text-anchor="middle" letter-spacing="1">LLMs</text>
+  <!-- Cyber Rain / Falling Binary (Right Side) -->
+  <text x="1100" y="0" font-family="'Consolas', monospace" font-size="11" fill="#d946ef" opacity="0.18" class="rain-col r-mid">
+    <tspan x="1100" dy="0">f</tspan>
+    <tspan x="1100" dy="16">(</tspan>
+    <tspan x="1100" dy="16">x</tspan>
+    <tspan x="1100" dy="16">)</tspan>
+    <tspan x="1100" dy="16">1</tspan>
+    <tspan x="1100" dy="16">0</tspan>
+    <tspan x="1100" dy="16">w</tspan>
+    <tspan x="1100" dy="16">b</tspan>
+  </text>
+  <text x="1145" y="0" font-family="'Consolas', monospace" font-size="11" fill="#00f2fe" opacity="0.22" class="rain-col r-fast">
+    <tspan x="1145" dy="0">1</tspan>
+    <tspan x="1145" dy="16">1</tspan>
+    <tspan x="1145" dy="16">0</tspan>
+    <tspan x="1145" dy="16">0</tspan>
+    <tspan x="1145" dy="16">1</tspan>
+    <tspan x="1145" dy="16">0</tspan>
+    <tspan x="1145" dy="16">1</tspan>
+    <tspan x="1145" dy="16">1</tspan>
+  </text>
+  <text x="1175" y="0" font-family="'Consolas', monospace" font-size="11" fill="#a855f7" opacity="0.15" class="rain-col r-slow">
+    <tspan x="1175" dy="0">0</tspan>
+    <tspan x="1175" dy="16">1</tspan>
+    <tspan x="1175" dy="16">0</tspan>
+    <tspan x="1175" dy="16">Z</tspan>
+    <tspan x="1175" dy="16">1</tspan>
+    <tspan x="1175" dy="16">0</tspan>
+    <tspan x="1175" dy="16">0</tspan>
+  </text>
+
+  <!-- ==================== NEURAL NETWORK WEB ==================== -->
+  <!-- Base connection paths (low opacity) -->
+  <g stroke-width="1" opacity="0.2">
+    <!-- Links to core (280, 200) -->
+    <path d="M 280 200 Q 170 130 100 100" fill="none" stroke="#a855f7" />
+    <path d="M 280 200 Q 180 270 120 300" fill="none" stroke="#00f2fe" />
+    <path d="M 280 200 Q 400 130 480 90" fill="none" stroke="#d946ef" />
+    <path d="M 280 200 Q 380 280 450 310" fill="none" stroke="#00f2fe" />
+    <path d="M 280 200 L 280 50" fill="none" stroke="#a855f7" />
+    <path d="M 280 200 L 280 350" fill="none" stroke="#d946ef" />
+
+    <!-- Cross connections -->
+    <path d="M 100 100 Q 180 60 280 50" fill="none" stroke="#00f2fe" />
+    <path d="M 280 50 Q 380 60 480 90" fill="none" stroke="#a855f7" />
+    <path d="M 120 300 Q 180 340 280 350" fill="none" stroke="#d946ef" />
+    <path d="M 280 350 Q 380 340 450 310" fill="none" stroke="#00f2fe" />
+    <line x1="100" y1="100" x2="120" y2="300" stroke="#a855f7" />
+    <line x1="480" y1="90" x2="450" y2="310" stroke="#d946ef" />
+  </g>
+
+  <!-- Pulsing/Flowing data paths -->
+  <g stroke-width="1.8" fill="none" opacity="0.8">
+    <path d="M 280 200 Q 170 130 100 100" stroke="#00f2fe" class="flow-line-1" />
+    <path d="M 280 200 Q 180 270 120 300" stroke="#d946ef" class="flow-line-2" />
+    <path d="M 280 200 Q 400 130 480 90" stroke="#00f2fe" class="flow-line-fast" />
+    <path d="M 280 200 Q 380 280 450 310" stroke="#a855f7" class="flow-line-1" />
+    <path d="M 280 200 L 280 50" stroke="#d946ef" class="flow-line-2" />
+    <path d="M 280 200 L 280 350" stroke="#00f2fe" class="flow-line-fast" />
+
+    <path d="M 100 100 Q 180 60 280 50" stroke="#a855f7" class="flow-line-1" />
+    <path d="M 280 50 Q 380 60 480 90" stroke="#d946ef" class="flow-line-2" />
+    <path d="M 120 300 Q 180 340 280 350" stroke="#00f2fe" class="flow-line-fast" />
+  </g>
+
+  <!-- Neural Nodes (Outer Points) -->
+  <circle cx="100" cy="100" r="7" fill="#00f2fe" filter="url(#neonGlowCyan)" class="pulse-glow-1" />
+  <circle cx="120" cy="300" r="9" fill="#d946ef" filter="url(#neonGlowPurple)" class="pulse-glow-2" />
+  <circle cx="480" cy="90" r="8" fill="#a855f7" filter="url(#neonGlowPurple)" class="pulse-glow-3" />
+  <circle cx="450" cy="310" r="10" fill="#00f2fe" filter="url(#neonGlowCyan)" class="pulse-glow-1" />
+  <circle cx="280" cy="50" r="6" fill="#a855f7" filter="url(#neonGlowPurple)" class="pulse-glow-2" />
+  <circle cx="280" cy="350" r="8" fill="#d946ef" filter="url(#neonGlowPurple)" class="pulse-glow-3" />
+
+  <!-- ==================== CENTRAL AI CORE ==================== -->
+  <!-- Outer technological spinning ring -->
+  <g class="ring-cw">
+    <circle cx="280" cy="200" r="120" fill="none" stroke="#a855f7" stroke-width="1" stroke-dasharray="120 20 40 20" opacity="0.3" />
+    <circle cx="280" cy="200" r="115" fill="none" stroke="#a855f7" stroke-width="0.5" stroke-dasharray="5 10" opacity="0.2" />
+  </g>
+
+  <!-- Middle tech spinning ring -->
+  <g class="ring-ccw">
+    <circle cx="280" cy="200" r="90" fill="none" stroke="#d946ef" stroke-width="2.5" stroke-dasharray="60 15 20 15" opacity="0.5" filter="url(#neonGlowPurple)" />
+    <!-- Technological ticks -->
+    <path d="M 280 100 L 280 106 M 280 300 L 280 294 M 180 200 L 186 200 M 380 200 L 374 200" stroke="#d946ef" stroke-width="2" opacity="0.6" />
+  </g>
+
+  <!-- Inner tech spinning ring -->
+  <g class="ring-cw-fast">
+    <circle cx="280" cy="200" r="60" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="15 35" opacity="0.7" filter="url(#neonGlowCyan)" />
+    <!-- Reactor Core lines -->
+    <line x1="260" y1="200" x2="300" y2="200" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
+    <line x1="280" y1="180" x2="280" y2="220" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
+    <line x1="266" y1="186" x2="294" y2="214" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
+    <line x1="266" y1="214" x2="294" y2="186" stroke="#ffffff" stroke-width="1.5" opacity="0.8" />
+  </g>
+
+  <!-- Central Core Orb (Glowing AI Core) -->
+  <circle cx="280" cy="200" r="28" fill="#110c2e" stroke="#00f2fe" stroke-width="2" filter="url(#neonGlowCyan)" />
+  <circle cx="280" cy="200" r="16" fill="#ffffff" filter="url(#neonGlowCyan)" class="pulse-glow-1" />
+
+  <!-- ==================== HACKER DECRYPT NAME SECTION ==================== -->
+  <!-- Decrypt Phase -->
+  <g class="decWrapper">
+    <text x="820" y="180" class="decText d1">0x7F8E4D2B5A</text>
+    <text x="820" y="180" class="decText d2">H_M4NTH_B@L</text>
+    <text x="820" y="180" class="decText d3">HEM@NTH B@L@JI</text>
+    <text x="820" y="180" class="decText d4">HEMANTH BAL</text>
+    <text x="820" y="180" class="decText d5">HEMANTH BALAJI</text>
+  </g>
+
+  <!-- Decrypted Final State -->
+  <g class="finalText">
+    <!-- Glitch shadows -->
+    <text x="820" y="180" font-family="'Consolas', 'Courier New', monospace" font-size="52" font-weight="900" fill="#ff0055" text-anchor="middle" opacity="0.4" class="glitch-r">HEMANTH BALAJI</text>
+    <text x="820" y="180" font-family="'Consolas', 'Courier New', monospace" font-size="52" font-weight="900" fill="#00ffff" text-anchor="middle" opacity="0.4" class="glitch-b">HEMANTH BALAJI</text>
+    <!-- Glowing Base text -->
+    <text x="820" y="180" font-family="'Consolas', 'Courier New', monospace" font-size="52" font-weight="900" fill="url(#titleGradient)" text-anchor="middle" filter="url(#neonGlowCyan)">HEMANTH BALAJI</text>
+  </g>
+
+  <!-- Subtitle and horizontal rules -->
+  <g class="subText">
+    <text x="820" y="222" font-family="'Consolas', 'Courier New', monospace" font-size="16" font-weight="700" fill="#a855f7" text-anchor="middle" letter-spacing="4">AI ENGINEER IN TRAINING</text>
+    <line x1="650" y1="240" x2="990" y2="240" stroke="url(#lineGradient)" stroke-width="1.5" class="subLine" />
+  </g>
+
+  <!-- Futuristic Loading Stack Badges -->
+  <!-- Python -->
+  <g class="badge-group bg-1">
+    <rect x="650" y="262" width="76" height="24" rx="6" fill="#0c0721" stroke="#00f2fe" stroke-width="1" />
+    <text x="688" y="278" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#00f2fe" text-anchor="middle">PYTHON</text>
+  </g>
+  <!-- PyTorch -->
+  <g class="badge-group bg-2">
+    <rect x="738" y="262" width="76" height="24" rx="6" fill="#0c0721" stroke="#d946ef" stroke-width="1" />
+    <text x="776" y="278" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#d946ef" text-anchor="middle">PYTORCH</text>
+  </g>
+  <!-- LLMs -->
+  <g class="badge-group bg-3">
+    <rect x="826" y="262" width="76" height="24" rx="6" fill="#0c0721" stroke="#a855f7" stroke-width="1" />
+    <text x="864" y="278" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#a855f7" text-anchor="middle">GEN AI</text>
+  </g>
+  <!-- Git -->
+  <g class="badge-group bg-4">
+    <rect x="914" y="262" width="76" height="24" rx="6" fill="#0c0721" stroke="#00f2fe" stroke-width="1" />
+    <text x="952" y="278" font-family="'Consolas', monospace" font-size="10" font-weight="700" fill="#00f2fe" text-anchor="middle">GIT</text>
+  </g>
+
+  <!-- ==================== PREMIUM NEON RUNNING BORDER ==================== -->
+  <rect x="10" y="10" width="1180" height="380" rx="16" fill="none" stroke="#1c163f" stroke-width="1" />
+  <rect x="10" y="10" width="1180" height="380" rx="16" fill="none" stroke="url(#borderGradient)" stroke-width="2" class="running-border" filter="url(#neonGlowCyan)" />
 </svg>

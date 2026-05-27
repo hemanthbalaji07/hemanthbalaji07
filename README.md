@@ -1,12 +1,9 @@
 <!-- HEMANTH BALAJI - GitHub Profile README -->
 <!-- To activate: create a public repo named "hemanthbalaji07" and push these files -->
 
-<!-- 3D ANIMATED WAVE HEADER -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Hemanth%20Balaji&fontSize=42&fontColor=ffffff&animation=twinkling&fontAlignY=32&desc=AI%20Engineer%20in%20Training%20%F0%9F%9A%80&descSize=18&descAlignY=52"/>
-
-<!-- 3D CINEMATIC BANNER -->
+<!-- PREMIUM QUANTUM NEURAL NEXUS BANNER -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/hemanthbalaji07/hemanthbalaji07/main/header.png" alt="Hemanth Balaji - AI Engineer Banner" width="100%"/>
+  <img src="https://raw.githubusercontent.com/hemanthbalaji07/hemanthbalaji07/main/github_profile_banner.svg" alt="Hemanth Balaji - AI Engineer Banner" width="100%"/>
 </p>
 
 <!-- TYPING ANIMATION - Name cycles through roles -->
