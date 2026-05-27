@@ -29,32 +29,32 @@ To activate it on your profile:
 
 ### 🚀 About Me & My Ambition
 
-I am a **1st-year computer science student** on a proactive mission to transition into **AI Engineering**. I believe the best way to learn is in public, which is why I am documenting my entire training curriculum, algorithms, and practical projects from day one.
+I am a **1st-year computer science student** who has just embarked on my journey to become an **AI Engineer**! I believe in starting early and learning by doing. I am documenting my daily progress, coding exercises, and projects right from the absolute basics.
 
-📂 **[ai-engineering-journey](https://github.com/hemanthbalaji07/ai-engineering-journey)** — My central repository documenting my learning path through mathematics, classical ML, and generative AI systems.
+📂 **[ai-engineering-journey](https://github.com/hemanthbalaji07/ai-engineering-journey)** — My hands-on repository where I am documenting my day-to-day coding journey, notes, and milestones.
 
-* **🌱 Proactive Early Start**: Initiating specialized training in Machine Learning, neural networks, and Deep Learning in my first year to build a solid technical foundation early.
-* **💡 Passionate About**: Advanced Python development, fine-tuning Large Language Models, engineering Retrieval-Augmented Generation (RAG) pipelines, and building AI agents.
-* **🎯 My Goal**: Building highly performant, production-ready AI applications and contributing to the open-source intelligence ecosystem.
+* **🌱 Just Getting Started**: I am currently focused on mastering **Python** programming from scratch and building strong core logic foundations.
+* **💡 The Long-Term Vision**: I am incredibly excited about Machine Learning, Neural Networks, Large Language Models (LLMs), and autonomous AI systems, and I aim to master these step-by-step.
+* **🎯 My Goal**: Building a rock-solid computer science and programming foundation in my 1st year, paving the way to engineering intelligent software.
 
 ---
 
-### 🗺️ My AI Engineering Roadmap (Recruiter Spotlight)
+### 🗺️ My AI Engineering Learning Roadmap
 
-Recruiters and collaborators can track my progress through my self-guided AI Engineering roadmap:
+I am committed to showing my real, honest growth. Here is my structured roadmap as I build my skills from the ground up:
 
-* **Phase 1: Engineering Fundamentals** 🟩 *Completed*
-  * High-performance Python, Object-Oriented Programming, and linear algebra.
-  * Relational databases (SQL), Git/GitHub version control workflows, and Bash scripting.
-* **Phase 2: Machine Learning Foundations** 🟩 *Completed*
-  * Supervised and Unsupervised Learning models with Scikit-Learn.
-  * Exploratory Data Analysis (EDA) using NumPy, Pandas, and Matplotlib.
-* **Phase 3: Deep Learning & Neural Architectures** 🟨 *Current Focus*
-  * Custom neural network implementation using **PyTorch** and TensorFlow.
-  * Computer Vision and Natural Language Processing (NLP) foundations.
-* **Phase 4: Generative AI & Large Language Models** 🚀 *Upcoming Goal*
-  * Retrieval-Augmented Generation (RAG) paradigms with LangChain and LlamaIndex.
-  * Fine-tuning LLMs (LoRA/QLoRA) and deploying production inference systems.
+* **Phase 1: Programming Fundamentals & Logic** 🟨 *Current Focus*
+  * Mastering Python syntax, data structures, and algorithms.
+  * Version control using Git and collaborative workflows on GitHub.
+* **Phase 2: Mathematical Foundations & Data** 🚀 *Next Step*
+  * Core mathematics: Linear Algebra, Calculus, and Probability.
+  * Data manipulation and analytics using SQL, NumPy, and Pandas.
+* **Phase 3: Classical Machine Learning** 🚀 *Upcoming Goal*
+  * Traditional regression, classification, and clustering models with Scikit-Learn.
+  * Building clean pipelines and evaluating model metrics.
+* **Phase 4: Deep Learning & Generative AI** 🚀 *Ultimate Goal*
+  * Custom neural networks with PyTorch.
+  * Fine-tuning Large Language Models and building advanced generative AI agents.
 
 ---
 
