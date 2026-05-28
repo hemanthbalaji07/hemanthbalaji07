@@ -8,7 +8,7 @@
 <!-- TYPING ANIMATION -->
 <p align="center">
   <a href="https://github.com/hemanthbalaji07">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=A855F7&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=185&lines=%F0%9F%91%8B+Hi%2C+I'm+Hemanth+Balaji;%F0%9F%92%BB+Aspiring+AI+Engineer;%F0%9F%90%8D+Python+%26+Math+Foundations;%F0%9F%A7%A0+Building+Production+AI+Systems;%F0%9F%9A%80+1st+Year+Student+%7C+Dreaming+Big" alt="Typing SVG" height="185"/>
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=A855F7&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=185&lines=%F0%9F%91%8B+Hi%2C+I'm+Hemanth+Balaji;%F0%9F%92%BB+Aspiring+AI+Engineer;%F0%9F%90%8D+Python+%26+Math+Foundations;%F0%9F%A7%A0+Journey+to+Production+AI;%F0%9F%9A%80+1st+Year+Student+%7C+Dreaming+Big" alt="Typing SVG" height="185"/>
   </a>
 </p>
 
