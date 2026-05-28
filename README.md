@@ -104,21 +104,21 @@ I believe in starting early and learning by doing. Right now, I am focusing on b
 </p>
 ---
 
-### 📈 My GitHub Contribution Streak
-
-<p align="center">
-  <a href="https://github.com/hemanthbalaji07">
-    <img width="85%" src="https://github-readme-streak-stats.herokuapp.com/?user=hemanthbalaji07&theme=tokyonight&background=0d1117&ring=a955f7&fire=00f0ff&currStreakNum=ffffff&sideNums=ffffff&sideLabels=a955f7&dates=ffffff&hide_border=true&border_radius=12" alt="GitHub Streak"/>
-  </a>
-</p>
-
----
-
 ### 📊 Weekly Contribution Activity
 
 <p align="center">
   <a href="https://github.com/hemanthbalaji07">
     <img width="85%" src="https://github-readme-activity-graph.vercel.app/graph?username=hemanthbalaji07&theme=tokyo-night&bg_color=0d1117&color=a855f7&line=00f0ff&point=ffffff&area=true&hide_border=true&border_radius=12" alt="Contribution Graph"/>
+  </a>
+</p>
+
+---
+
+### 📈 My GitHub Contribution Streak
+
+<p align="center">
+  <a href="https://github.com/hemanthbalaji07">
+    <img width="85%" src="https://github-readme-streak-stats.herokuapp.com/?user=hemanthbalaji07&theme=tokyonight&background=0d1117&ring=a955f7&fire=00f0ff&currStreakNum=ffffff&sideNums=ffffff&sideLabels=a955f7&dates=ffffff&hide_border=true&border_radius=12" alt="GitHub Streak"/>
   </a>
 </p>
 
