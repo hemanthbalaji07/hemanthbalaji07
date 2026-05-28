@@ -103,15 +103,21 @@ I believe in starting early and learning by doing. Right now, I am focusing on b
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"/>
 </p>
 
+<h3 align="center">🏆 My Dev Journey Trophies</h3>
+
+<p align="center">
+  <a href="https://github.com/hemanthbalaji07">
+    <img src="https://github-profile-trophy.vercel.app/?username=hemanthbalaji07&theme=tokyonight&column=5&row=2&no-bg=true&margin-w=15&margin-h=15" alt="Hemanth's Trophies" />
+  </a>
+</p>
+
 ---
 
-### 📈 Contribution Activity
+### 📈 Contribution Activity & Streak
 
 <p align="center">
-  <img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=hemanthbalaji07&bg_color=0d1117&color=a970ff&line=00f0ff&point=ffffff&area=true&hide_border=true&border_radius=12&v=1" alt="Contribution Graph"/>
-</p>
-<p align="center">
-  <img width="60%" src="https://github-readme-streak-stats.herokuapp.com/?user=hemanthbalaji07&theme=dark&background=0d1117&ring=a970ff&fire=00f0ff&currStreakNum=ffffff&sideNums=ffffff&sideLabels=a970ff&dates=ffffff&hide_border=true&border_radius=12&v=1" alt="GitHub Streak"/>
+  <img width="49%" src="https://github-readme-activity-graph.vercel.app/graph?username=hemanthbalaji07&bg_color=0d1117&color=a970ff&line=00f0ff&point=ffffff&area=true&hide_border=true&border_radius=12&v=1" alt="Contribution Graph"/>
+  <img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=hemanthbalaji07&theme=dark&background=0d1117&ring=a970ff&fire=00f0ff&currStreakNum=ffffff&sideNums=ffffff&sideLabels=a970ff&dates=ffffff&hide_border=true&border_radius=12&v=1" alt="GitHub Streak"/>
 </p>
 
 ---
