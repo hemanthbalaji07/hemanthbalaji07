@@ -104,6 +104,16 @@ I believe in starting early and learning by doing. Right now, I am focusing on b
 </p>
 ---
 
+### 🏆 My Dev Journey Trophies
+
+<p align="center">
+  <a href="https://github.com/hemanthbalaji07">
+    <img width="85%" src="https://github-profile-trophy.vercel.app/?username=hemanthbalaji07&theme=tokyonight&no-bg=true&no-frame=true&column=-1&margin-w=15" alt="GitHub Trophies"/>
+  </a>
+</p>
+
+---
+
 ### 📊 Weekly Contribution Activity
 
 <p align="center">
