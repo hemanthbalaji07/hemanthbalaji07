@@ -64,11 +64,7 @@ I believe in starting early and learning by doing. Right now, I am focusing on b
 
 *Inside my [`ai-engineering-journey`](https://github.com/hemanthbalaji07/ai-engineering-journey) repository:*
 
-- 📝 [**`daily-logs/`**](https://github.com/hemanthbalaji07/ai-engineering-journey/tree/main/daily-logs) — Daily logs of what I code, build, and study
 - 🐍 [**`python/`**](https://github.com/hemanthbalaji07/ai-engineering-journey/tree/main/python) — Python scripts, syntax exercises, and algorithm practice
-- 📓 [**`notes/`**](https://github.com/hemanthbalaji07/ai-engineering-journey/tree/main/notes) — Conceptual notes on mathematics and programming theory
-- 📅 [**`weekly-recaps/`**](https://github.com/hemanthbalaji07/ai-engineering-journey/tree/main/weekly-recaps) — Recaps and checklists summarizing my weekly progress
-- 📚 [**`resources/`**](https://github.com/hemanthbalaji07/ai-engineering-journey/tree/main/resources) — Study resources, textbooks, and documentation guides
 - 🗺️ [**`roadmap/`**](https://github.com/hemanthbalaji07/ai-engineering-journey/tree/main/roadmap) — Custom files tracing my AI Engineering milestones
 - 🚀 [**`projects/`**](https://github.com/hemanthbalaji07/ai-engineering-journey/tree/main/projects) — Codebases and mini-projects as I advance
 
